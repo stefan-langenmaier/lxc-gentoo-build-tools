@@ -1,0 +1,36 @@
+# Template used to create this container: /usr/share/lxc/templates/lxc-gentoo-runtime
+# Parameters passed to the template:
+# For additional config options, please look at lxc.container.conf(5)
+lxc.network.type = empty
+lxc.rootfs = /etc/lxc/gentoo-runtime/rootfs
+lxc.utsname = gentoo-runtime
+
+lxc.autodev = 1
+lxc.mount.auto = proc sys
+
+lxc.tty = 1
+lxc.pts = 1
+
+
+
+### lxc-gentoo-runtime template stuff starts here
+# sets container architecture
+# If desired architecture != amd64 or x86, then we leave it unset as
+# LXC does not oficially support anything other than x86 or amd64.
+#
+
+# set the hostname
+#lxc.utsname = gentoo-runtime
+#lxc.mount = /etc/lxc/gentoo-runtime/rootfs/etc/fstab
+
+#
+#lxc.mount.entry = /lib lib none ro,bind 0 0
+#lxc.mount.entry = /usr/lib usr/lib none ro,bind 0 0
+#lxc.mount.entry = /lib64 lib64 none ro,bind 0 0
+#lxc.mount.entry = /usr/lib64 usr/lib64 none ro,bind 0 0
+#lxc.mount.entry = /sys/kernel/security sys/kernel/security none ro,bind,optional 0 0
+#lxc.mount.auto = proc:mixed sys
+
+
+
+#lxc.include = /usr/share/lxc/config/gentoo.common.conf
