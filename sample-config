@@ -1,7 +1,16 @@
 # Template used to create this container: /usr/share/lxc/templates/lxc-gentoo-runtime
 # Parameters passed to the template:
 # For additional config options, please look at lxc.container.conf(5)
-lxc.network.type = empty
+#lxc.network.type = empty
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.link = virbr0
+lxc.network.ipv4 = 0.0.0.0/24
+lxc.network.name = eth0
+lxc.network.hwaddr = 00:16:3e:20:3e:71
+lxc.network.mtu = 1500
+
+
 lxc.rootfs = /etc/lxc/gentoo-runtime/rootfs
 lxc.utsname = gentoo-runtime
 
