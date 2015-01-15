@@ -15,7 +15,8 @@ lxc.rootfs = /etc/lxc/gentoo-runtime/rootfs
 lxc.utsname = gentoo-runtime
 
 lxc.autodev = 1
-lxc.mount.auto = proc sys
+#lxc.mount.auto = proc:mixed sys
+lxc.mount.auto = sys
 
 lxc.tty = 1
 lxc.pts = 1
