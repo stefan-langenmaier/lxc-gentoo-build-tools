@@ -1,2 +1,12 @@
-/usr/sbin/apache2 -D DEFAULT_VHOST -D INFO -D SSL -D SSL_DEFAULT_VHOST 
--D LANGUAGE -D PASSENGER -D FOREGROUND -k start
+#dependencies which are not part of the ebuild
+emerge baselayout shadow
+
+#add the apache user
+groupadd apache
+useradd -g apache apache
+
+#add the hostname
+nano /etc/hosts
+
+#now apache can be started
+/usr/sbin/apache2 -D DEFAULT_VHOST -D INFO -D SSL -D SSL_DEFAULT_VHOST -D LANGUAGE -D PASSENGER -D FOREGROUND -k start
