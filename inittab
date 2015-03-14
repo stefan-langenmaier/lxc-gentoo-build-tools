@@ -59,3 +59,9 @@ ca:12345:ctrlaltdel:/sbin/shutdown -r now
 # extra at boot if /etc/init.d/xdm is not added
 # to the "default" runlevel.
 x:a:once:/etc/X11/startDM.sh
+
+# Lxc main console
+1:12345:respawn:/sbin/agetty -a root --noclear 115200 console linux
+# clean container shutdown on SIGPWR
+pf:12345:powerwait:/sbin/halt
+

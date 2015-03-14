@@ -1,6 +1,16 @@
 #dependencies which are not part of the ebuild
 emerge baselayout shadow
 
+baselayout
+
+openrc
+
+shadow grep net-tools coreutils procps findutils
+
+passenger
+
+#apache need SysV IPC!
+
 #add the apache user
 groupadd apache
 useradd -g apache apache
