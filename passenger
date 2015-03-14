@@ -1,2 +1,0 @@
-#dependencies which are not part of the ebuild
-emerge openldap nss gcc
