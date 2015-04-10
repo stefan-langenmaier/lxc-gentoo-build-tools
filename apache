@@ -1,13 +1,15 @@
 #dependencies which are not part of the ebuild
-emerge baselayout shadow
+emerge
 
 baselayout
 
-openrc
+openrc shadow util-linux bash coreutils
 
-shadow grep net-tools coreutils procps findutils
+grep net-tools procps findutils dhcpcd nano
 
-passenger
+gcc passenger
+
+redmine
 
 #apache need SysV IPC!
 
@@ -15,8 +17,16 @@ passenger
 groupadd apache
 useradd -g apache apache
 
+redmine config
+
+#uninstall
+gcc perl python portage
+
 #add the hostname
-nano /etc/hosts
+#nano /etc/hosts
 
 #now apache can be started
-/usr/sbin/apache2 -D DEFAULT_VHOST -D INFO -D SSL -D SSL_DEFAULT_VHOST -D LANGUAGE -D PASSENGER -D FOREGROUND -k start
+#/usr/sbin/apache2 -D DEFAULT_VHOST -D INFO -D SSL -D SSL_DEFAULT_VHOST -D LANGUAGE -D PASSENGER -D FOREGROUND -k start
+
+
+#uninstall
