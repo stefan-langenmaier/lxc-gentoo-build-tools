@@ -1,0 +1,5 @@
+www-apps/redmine git imagemagick mysql sqlite3
+virtual/mysql minimal
+# required by virtual/mysql-5.6-r2
+# required by mysql (argument)
+=dev-db/mariadb-10.0.16 minimal

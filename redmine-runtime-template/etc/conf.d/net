@@ -1,0 +1,2 @@
+#rc_keyword="-stop"
+config_eth0="noop dhcp"
