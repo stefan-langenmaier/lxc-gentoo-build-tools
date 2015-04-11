@@ -20,7 +20,7 @@ useradd -g apache apache
 redmine config
 
 #uninstall
-gcc perl python portage
+emerge -C gcc perl python portage (perl-cleaner)
 
 #add the hostname
 #nano /etc/hosts
