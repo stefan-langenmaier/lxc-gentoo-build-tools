@@ -5,7 +5,7 @@ baselayout
 
 openrc shadow util-linux bash coreutils
 
-grep net-tools procps findutils dhcpcd nano
+grep net-tools procps findutils dhcpcd nano sed
 
 gcc passenger
 
