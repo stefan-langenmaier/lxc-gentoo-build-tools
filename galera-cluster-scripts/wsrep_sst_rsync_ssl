@@ -122,6 +122,30 @@ FILTER=(-f '- /lost+found' -f '- /.fseventsd' -f '- /.Trashes'
 
 if [ "$WSREP_SST_OPT_ROLE" = "donor" ]
 then
+
+WSREP_SST_OPT_HOST=${WSREP_SST_OPT_ADDR%:*}
+cat << EOF > "$STUNNEL_CLIENT_CONF"
+socket = l:TCP_NODELAY=1
+socket = r:TCP_NODELAY=1
+
+# This must be root for rsync to use chroot -- rsync will drop permissions:
+setuid = root
+setgid = root
+
+foreground = yes
+debug = crit
+connect = $WSREP_SST_OPT_HOST:4444
+client = yes
+TIMEOUTclose = 0
+
+cert = $STUNNEL_CERTIFICATE
+key = $STUNNEL_CERTIFICATE
+CAfile = $STUNNEL_CERTIFICATE
+
+verify = 3
+
+EOF
+
     if [ $WSREP_SST_OPT_BYPASS -eq 0 ]
     then
 
@@ -163,29 +187,6 @@ then
             fi
             popd &> /dev/null
         fi
-
-WSREP_SST_OPT_HOST=${WSREP_SST_OPT_ADDR%:*}
-cat << EOF > "$STUNNEL_CLIENT_CONF"
-socket = l:TCP_NODELAY=1
-socket = r:TCP_NODELAY=1
-
-# This must be root for rsync to use chroot -- rsync will drop permissions:
-setuid = root
-setgid = root
-
-foreground = yes
-debug = crit
-connect = $WSREP_SST_OPT_HOST:4444
-client = yes
-TIMEOUTclose = 0
-
-cert = $STUNNEL_CERTIFICATE
-key = $STUNNEL_CERTIFICATE
-CAfile = $STUNNEL_CERTIFICATE
-
-verify = 3
-
-EOF
 
         # first, the normal directories, so that we can detect incompatible protocol
         RC=0
@@ -343,7 +344,7 @@ EOF
           ps -p $MYSQLD_PID >/dev/null
     do
         sleep 1
-	wsrep_log_error "WAITING"
+	wsrep_log_info "TRANSFERING SST"
     done
 
     if ! ps -p $MYSQLD_PID >/dev/null
