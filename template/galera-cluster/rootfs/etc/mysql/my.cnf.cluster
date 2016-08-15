@@ -1,0 +1,176 @@
+# /etc/mysql/my.cnf: The global mysql configuration file.
+# $Id$
+
+# The following options will be passed to all MySQL clients
+[client]
+password					= mysql
+port						= 3306
+socket						= /var/run/mysqld/mysqld.sock
+
+[mysql]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[mysqladmin]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[mysqlcheck]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[mysqldump]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[mysqlimport]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[mysqlshow]
+character-sets-dir=/usr/share/mysql/charsets
+default-character-set=utf8
+
+[myisamchk]
+character-sets-dir=/usr/share/mysql/charsets
+
+[myisampack]
+character-sets-dir=/usr/share/mysql/charsets
+
+# use [safe_mysqld] with mysql-3
+[mysqld_safe]
+err-log						= /var/log/mysql/mysql.err
+
+# add a section [mysqld-4.1] or [mysqld-5.0] for specific configurations
+[mysqld]
+character-set-server		= utf8
+user 						= mysql
+port 						= 3306
+socket 						= /var/run/mysqld/mysqld.sock
+pid-file 					= /var/run/mysqld/mysqld.pid
+log-error 					= /var/log/mysql/mysqld.err
+basedir 					= /usr
+datadir 					= /var/lib/mysql
+skip-external-locking
+key_buffer_size				= 16M
+max_allowed_packet 			= 4M
+table_open_cache 			= 400
+sort_buffer_size 			= 512K
+net_buffer_length 			= 16K
+read_buffer_size 			= 256K
+read_rnd_buffer_size 		= 512K
+myisam_sort_buffer_size 	= 8M
+lc_messages_dir			= /usr/share/mysql
+#Set this to your desired error message language
+lc_messages			= en_US
+
+# security:
+# using "localhost" in connects uses sockets by default
+# skip-networking
+#bind-address				= 127.0.0.1
+
+log-bin
+server-id 					= 1
+
+# point the following paths to different dedicated disks
+tmpdir 						= /tmp/
+#log-update 				= /path-to-dedicated-directory/hostname
+
+# you need the debug USE flag enabled to use the following directives,
+# if needed, uncomment them, start the server and issue
+# #tail -f /tmp/mysqld.sql /tmp/mysqld.trace
+# this will show you *exactly* what's happening in your server ;)
+
+#log						= /tmp/mysqld.sql
+#gdb
+#debug						= d:t:i:o,/tmp/mysqld.trace
+#one-thread
+
+# the rest of the innodb config follows:
+# don't eat too much memory, we're trying to be safe on 64Mb boxes
+# you might want to bump this up a bit on boxes with more RAM
+innodb_buffer_pool_size = 128M
+#
+# i'd like to use /var/lib/mysql/innodb, but that is seen as a database :-(
+# and upstream wants things to be under /var/lib/mysql/, so that's the route
+# we have to take for the moment
+#innodb_data_home_dir		= /var/lib/mysql/
+#innodb_log_arch_dir		= /var/lib/mysql/
+#innodb_log_group_home_dir	= /var/lib/mysql/
+# you may wish to change this size to be more suitable for your system
+# the max is there to avoid run-away growth on your machine
+innodb_data_file_path = ibdata1:10M:autoextend:max:128M
+# we keep this at around 25% of of innodb_buffer_pool_size
+# sensible values range from 1MB to (1/innodb_log_files_in_group*innodb_buffer_pool_size)
+innodb_log_file_size = 48M
+# this is the default, increase it if you have very large transactions going on
+innodb_log_buffer_size = 8M
+# this is the default and won't hurt you
+# you shouldn't need to tweak it
+innodb_log_files_in_group=2
+# see the innodb config docs, the other options are not always safe
+innodb_flush_log_at_trx_commit = 1
+innodb_lock_wait_timeout = 50
+innodb_file_per_table
+
+# Uncomment this to get FEDERATED engine support
+#plugin-load=federated=ha_federated.so
+#loose-federated
+
+# These settings are required for Galera clustering
+#mysql settings
+wsrep_on=ON
+binlog_format=ROW
+default-storage-engine=innodb
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+query_cache_size=0
+query_cache_type=0
+bind-address=0.0.0.0
+
+log-bin=mysqld-bin
+expire_logs_days=3
+# Uncomment this section to activate Galera clustering
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+# You should change this name to something meaningful
+wsrep_cluster_name="owncloud_wsrep_cluster"
+# List all nodes of the cluster including this one
+
+#wsrep_cluster_address="gcomm://"
+#wsrep_cluster_address="gcomm://langenmaier.net,quebec.langenmaier.net,up-log.de"
+#wsrep_cluster_address="gcomm://langenmaier.net,quebec.langenmaier.net"
+wsrep_cluster_address="gcomm://langenmaier.net"
+wsrep_sst_method=rsync_ssl
+
+ssl-ca = /etc/ssl/galera/ca-cert.pem
+ssl-key = /etc/ssl/galera/server-key.pem
+ssl-cert = /etc/ssl/galera/server-cert.pem
+
+wsrep_node_address="quebec.langenmaier.net"
+wsrep_provider_options="socket.ssl_key=/etc/ssl/galera/server-key.pem;socket.ssl_cert=/etc/ssl/galera/server-cert.pem;socket.ssl_ca=/etc/ssl/galera/ca-cert.pem;ist.recv_bind=192.168.122.59;evs.keepalive_period = PT3S;evs.suspect_timeout = PT30S;evs.inactive_timeout = PT1M;evs.install_timeout = PT1M"
+wsrep_notify_cmd=/bin/true
+
+[mysqldump]
+quick
+max_allowed_packet 			= 16M
+
+[mysql]
+# uncomment the next directive if you are not familiar with SQL
+#safe-updates
+
+[isamchk]
+key_buffer_size				= 20M
+sort_buffer_size 			= 20M
+read_buffer 				= 2M
+write_buffer 				= 2M
+
+[myisamchk]
+key_buffer_size				= 20M
+sort_buffer_size 			= 20M
+read_buffer_size			= 2M
+write_buffer_size			= 2M
+
+[mysqlhotcopy]
+interactive-timeout
+
+[mariadb]

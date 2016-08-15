@@ -1,0 +1,3 @@
+dev-db/mariadb ~arm
+sys-cluster/galera ~arm
+dev-cpp/asio ~arm
