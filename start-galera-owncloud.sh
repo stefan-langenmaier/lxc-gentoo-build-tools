@@ -20,5 +20,7 @@ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport $PORT -j DNAT --to $IP:$POR
 
 #mount -o subvol=vols/galera-owncloud /dev/mmcblk0p3  /vols/galera-owncloud/
 #mount -o subvol=galera-data-owncloud /dev/mapper/data-01  /data/galera-data-owncloud/
-#lxc-start -n galera-cluster
+mount /var/lib/lxc/galera-cluster/
+mount /data/galera-data-owncloud/
+lxc-start -n galera-cluster
 #lxc-start -n galera-cluster -P /vols/galera-owncloud/
