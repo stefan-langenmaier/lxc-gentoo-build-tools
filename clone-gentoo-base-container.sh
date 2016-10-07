@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME=galera-cluster
+CONTAINER_NAME=owncloud-app
 BASE_CONTAINER_NAME=gentoo-base-container
 
 mount /mnt/full-root/ #|| die "Failed mounting full root"
@@ -16,8 +16,9 @@ chroot "/var/lib/lxc/${CONTAINER_NAME}/rootfs" rc-update del sshd
 
 # install world
 lxc-start -n ${CONTAINER_NAME}
-lxc-attach -n ${CONTAINER_NAME} -- emerge -uDN world --with-bdeps=y
 lxc-attach -n ${CONTAINER_NAME} -- eselect news read
-lxc-attach -n ${CONTAINER_NAME} -- etc-update
+lxc-attach -n ${CONTAINER_NAME} -- emerge -uDN world --with-bdeps=y
+lxc-attach -n ${CONTAINER_NAME} -- etc-update -p # do trivial merges
+#lxc-attach -n ${CONTAINER_NAME} -- etc-update --automode -9 # ignore the rest
 lxc-attach -n ${CONTAINER_NAME} -- bash /container-specific-setup.sh
 lxc-stop -n ${CONTAINER_NAME}
