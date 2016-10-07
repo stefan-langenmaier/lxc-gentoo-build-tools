@@ -1,0 +1,5 @@
+www-apps/nextcloud mysql -sqlite
+app-eselect/eselect-php fpm
+dev-lang/php mysql zip pcntl pdo curl fpm xmlwriter gd xmlreader
+
+sys-devel/gcc -fortran -openmp
