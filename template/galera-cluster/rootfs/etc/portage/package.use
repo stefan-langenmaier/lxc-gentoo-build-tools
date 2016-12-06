@@ -1,3 +1,2 @@
-sys-cluster/galera garbd
 dev-db/mariadb client-libs sst-rsync galera
 sys-devel/gcc -fortran -openmp
