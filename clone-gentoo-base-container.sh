@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME=owncloud-app
+CONTAINER_NAME=syncthing
 BASE_CONTAINER_NAME=gentoo-base-container
 
 mount /mnt/full-root/ #|| die "Failed mounting full root"

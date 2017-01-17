@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #CONTAINER_NAME=gentoo-base-container
-CONTAINER_NAME=owncloud-app
+CONTAINER_NAME=syncthing
 
 lxc-stop -n ${CONTAINER_NAME}
 # NOT needed #lxc-destroy -n ${CONTAINER_NAME}
