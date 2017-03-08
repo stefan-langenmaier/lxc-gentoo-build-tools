@@ -1,0 +1,36 @@
+# Template used to create this container: /usr/share/lxc/templates/lxc-gentoo
+# Parameters passed to the template: -a arm -v armv7a_hardfp
+# For additional config options, please look at lxc.container.conf(5)
+#lxc.network.type = empty
+lxc.network.type = veth
+lxc.network.flags = up
+lxc.network.link = virbr0
+lxc.network.ipv4 = 192.168.122.9/24
+lxc.network.ipv4.gateway = 192.168.122.1
+#lxc.network.ipv4 = 0.0.0.0/24
+lxc.network.name = eth0
+#lxc.network.hwaddr = 00:16:3e:20:3e:71
+#lxc.network.mtu = 1500
+
+lxc.rootfs = /var/lib/lxc/cubox-i/rootfs
+### lxc-gentoo template stuff starts here
+# sets container architecture
+# If desired architecture != amd64 or x86, then we leave it unset as
+# LXC does not oficially support anything other than x86 or amd64.
+# lxc.arch = arm
+
+# set the hostname
+lxc.utsname = cubox-i
+lxc.tty = 1
+
+
+#container set with shared portage
+lxc.mount.entry=/usr/portage usr/portage none ro,bind 0 0
+lxc.mount.entry=/usr/portage/distfiles usr/portage/distfiles none rw,bind 0 0
+lxc.mount.entry=/data/cuboxi-packages usr/portage/packages none rw,bind 0 0
+#If you use eix, you should uncomment this
+#lxc.mount.entry=/var/cache/eix var/cache/eix none ro,bind 0 0
+
+
+
+lxc.include = /usr/share/lxc/config/gentoo.common.conf

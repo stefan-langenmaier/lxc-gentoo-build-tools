@@ -1,0 +1,3 @@
+# required by app-emulation/libvirt-3.0.0::gentoo[virt-network]
+net-dns/dnsmasq script
+app-emulation/libvirt -qemu

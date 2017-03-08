@@ -1,0 +1,16 @@
+app-emulation/lxc ~arm
+sys-process/criu ~arm
+<app-emulation/libvirt-9999 **
+# required by app-emulation/libvirt-3.0.0::gentoo
+=app-misc/scrub-2.6.1 **
+# required by app-emulation/libvirt-3.0.0::gentoo
+=app-text/xhtml1-20020801-r4 **
+# required by app-emulation/libvirt-3.0.0::gentoo
+=dev-perl/XML-XPath-1.370.0 ~arm
+# required by app-emulation/libvirt-3.0.0::gentoo[virt-network]
+=net-firewall/ebtables-2.0.10.4-r1 ~arm
+
+sys-fs/btrfs-progs ~arm
+
+sys-auth/google-authenticator ~arm
+
