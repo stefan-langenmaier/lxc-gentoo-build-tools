@@ -18,6 +18,13 @@
 
 # This is a reference script for rsync-based state snapshot tansfer
 
+function finish {
+    # simple hack to avoid trailing processes if the script fails
+    killall stunnel
+}
+trap finish EXIT
+
+
 RSYNC_PID=
 RSYNC_CONF=
 STUNNEL_CERTIFICATE=/etc/ssl/stunnel/stunnel.pem
