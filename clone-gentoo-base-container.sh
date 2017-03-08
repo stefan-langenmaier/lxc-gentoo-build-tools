@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER_NAME=syncthing
+CONTAINER_NAME=cubox-i
 BASE_CONTAINER_NAME=gentoo-base-container
 
 mount /mnt/full-root/ #|| die "Failed mounting full root"

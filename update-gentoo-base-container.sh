@@ -16,5 +16,6 @@ else
 	lxc-attach -n ${CONTAINER_NAME} -- eselect news read
 	lxc-attach -n ${CONTAINER_NAME} -- emerge -uDN world --with-bdeps=y
 	lxc-attach -n ${CONTAINER_NAME} -- etc-update -p # do trivial merges
+	lxc-attach -n ${CONTAINER_NAME} -- rm /var/tmp/portage/* -rf
 fi
 lxc-stop -n ${CONTAINER_NAME}

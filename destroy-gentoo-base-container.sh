@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #CONTAINER_NAME=gentoo-base-container
-CONTAINER_NAME=syncthing
+CONTAINER_NAME=cubox-i
 
 lxc-stop -n ${CONTAINER_NAME}
 # NOT needed #lxc-destroy -n ${CONTAINER_NAME}
