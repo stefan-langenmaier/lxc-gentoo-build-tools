@@ -3,6 +3,7 @@
 set -eux
 
 CONTAINER_NAME=gentoo-base-container
+#CONTAINER_NAME=cubox-i
 
 mountpoint -q /mnt/full-root/ || mount /mnt/full-root/ #|| die "Failed mounting full root"
 mountpoint -q /var/lib/lxc/${CONTAINER_NAME} || mount -o subvol=vols/${CONTAINER_NAME} /dev/mmcblk1p3 /var/lib/lxc/${CONTAINER_NAME}
