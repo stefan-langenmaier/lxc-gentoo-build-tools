@@ -1,0 +1,55 @@
+=www-apps/nextcloud-12.0.0 ~arm
+=dev-php/pecl-apcu-5.1.8 **
+
+www-servers/nginx ~arm
+
+app-crypt/certbot ~arm
+app-crypt/certbot-nginx ~arm
+app-crypt/acme ~arm
+dev-python/cryptography ~arm
+
+# required by app-crypt/acme-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/pyrfc3339-1.0 ~arm
+# required by dev-python/cryptography-1.9::gentoo
+# required by dev-python/requests-2.12.5::gentoo
+# required by app-crypt/acme-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/asn1crypto-0.22.0 ~arm
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/configargparse-0.12.0 ~arm
+# required by dev-python/zope-component-4.3.0-r1::gentoo
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/namespace-zope-1 ~arm
+# required by dev-python/parsedatetime-2.4-r1::gentoo
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/future-0.16.0 ~arm
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/parsedatetime-2.4-r1 ~arm
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/configobj-5.0.6 ~arm
+# required by app-crypt/certbot-0.15.0::gentoo
+# required by app-crypt/certbot-nginx-0.15.0::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/zope-component-4.3.0-r1 ~arm
+

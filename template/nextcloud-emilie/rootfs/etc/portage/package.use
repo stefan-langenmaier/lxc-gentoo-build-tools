@@ -1,0 +1,3 @@
+www-apps/nextcloud sqlite
+app-eselect/eselect-php fpm
+dev-lang/php sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader
