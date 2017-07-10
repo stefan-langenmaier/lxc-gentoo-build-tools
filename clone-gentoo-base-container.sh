@@ -2,7 +2,7 @@
 
 set -eux
 
-CONTAINER_NAME=cubox-i
+CONTAINER_NAME=$1
 BASE_CONTAINER_NAME=gentoo-base-container
 
 mountpoint -q /mnt/full-root/ || mount /mnt/full-root/
@@ -22,7 +22,7 @@ chroot "/var/lib/lxc/${CONTAINER_NAME}/rootfs" rc-update del sshd
 # install world
 lxc-start -n ${CONTAINER_NAME}
 lxc-attach -n ${CONTAINER_NAME} -- eselect news read
-lxc-attach -n ${CONTAINER_NAME} -- emerge -uDN world --with-bdeps=y
+lxc-attach -n ${CONTAINER_NAME} -- emerge -uDN world --with-bdeps=y --binpkg-respect-use=y
 lxc-attach -n ${CONTAINER_NAME} -- etc-update -p # do trivial merges
 #lxc-attach -n ${CONTAINER_NAME} -- etc-update --automode -9 # ignore the rest
 lxc-attach -n ${CONTAINER_NAME} -- bash /container-specific-setup.sh

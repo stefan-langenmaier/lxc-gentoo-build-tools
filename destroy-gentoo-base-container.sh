@@ -2,12 +2,16 @@
 
 set -ux
 
-CONTAINER_NAME=gentoo-base-container
-#CONTAINER_NAME=cubox-i
+#CONTAINER_NAME=gentoo-base-container
+CONTAINER_NAME=$1
 
 lxc-stop -n ${CONTAINER_NAME} || echo "not running"
 # NOT needed #lxc-destroy -n ${CONTAINER_NAME}
 
+mountpoint -q /var/lib/lxc/${CONTAINER_NAME}/rootfs
+if [ $? -eq 0 ]; then
+	umount /var/lib/lxc/${CONTAINER_NAME}/rootfs
+fi
 mountpoint -q /var/lib/lxc/${CONTAINER_NAME}
 if [ $? -eq 0 ]; then
 	umount /var/lib/lxc/${CONTAINER_NAME}
