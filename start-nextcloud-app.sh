@@ -8,6 +8,6 @@ PORT=80
 iptables -I FORWARD -d $IP/32 -p tcp -m state --state NEW -m tcp --dport $PORT -j ACCEPT
 iptables -t nat -I PREROUTING -i eth0 -p tcp --dport $PORT -j DNAT --to $IP:$PORT
 
-mount /var/lib/lxc/owncloud-app/
-mount /data/owncloud/
-lxc-start -n owncloud-app
+mount /var/lib/lxc/nextcloud-app/
+mount /data/nextcloud/
+lxc-start -n nextcloud-app
