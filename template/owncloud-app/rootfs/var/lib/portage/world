@@ -1,5 +1,7 @@
 app-crypt/certbot
+app-crypt/certbot-nginx
 app-misc/screen
+dev-db/mariadb
 dev-php/pecl-apcu
 sys-process/cronie
 www-apps/nextcloud

@@ -5,7 +5,10 @@
 lxc.network.type = veth
 lxc.network.flags = up
 lxc.network.link = virbr0
-lxc.network.ipv4 = 192.168.122.79/24
+ #build
+lxc.network.ipv4 = 192.168.122.78/24
+# run
+#lxc.network.ipv4 = 192.168.122.79/24
 lxc.network.ipv4.gateway = 192.168.122.1
 #lxc.network.ipv4 = 0.0.0.0/24
 lxc.network.name = eth0
@@ -28,7 +31,8 @@ lxc.tty = 1
 lxc.mount.entry=/usr/portage usr/portage none ro,bind 0 0
 lxc.mount.entry=/usr/portage/distfiles usr/portage/distfiles none rw,bind 0 0
 lxc.mount.entry=/data/container-packages usr/portage/packages none rw,bind 0 0
-lxc.mount.entry=/data/owncloud/ data/owncloud none rw,bind 0 0
+lxc.mount.entry=/data/nextcloud/ data/nextcloud none rw,bind 0 0
+lxc.mount.entry=/data/nextcloud-mysql/ var/lib/mysql none rw,bind 0 0
 #If you use eix, you should uncomment this
 #lxc.mount.entry=/var/cache/eix var/cache/eix none ro,bind 0 0
 
