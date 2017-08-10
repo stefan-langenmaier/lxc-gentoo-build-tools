@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # webinstall
-webapp-config -I www-apps/nextcloud 12.0.0 -d nextcloud -s nginx
+webapp-config -I www-apps/nextcloud 12.0.1 -d nextcloud -s nginx
 
 # copy nextcloud config
 mv /config.php /var/www/localhost/htdocs/nextcloud/config/config.php

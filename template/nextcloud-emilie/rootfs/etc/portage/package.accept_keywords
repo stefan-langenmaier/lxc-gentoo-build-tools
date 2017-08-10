@@ -1,4 +1,4 @@
-=www-apps/nextcloud-12.0.0 ~arm
+=www-apps/nextcloud-12.0.1 ~arm
 =dev-php/pecl-apcu-5.1.8 **
 
 www-servers/nginx ~arm
