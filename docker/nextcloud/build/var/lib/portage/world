@@ -1,0 +1,8 @@
+app-crypt/certbot-nginx
+app-misc/screen
+dev-db/mariadb
+dev-php/pecl-apcu
+media-libs/freetype
+sys-process/cronie
+=www-apps/nextcloud-12.0.7
+www-servers/nginx

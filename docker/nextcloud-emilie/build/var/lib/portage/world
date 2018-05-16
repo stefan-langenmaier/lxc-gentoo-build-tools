@@ -1,0 +1,7 @@
+app-crypt/certbot-nginx
+app-misc/screen
+dev-php/pecl-apcu
+media-libs/freetype
+sys-process/cronie
+www-apps/nextcloud
+www-servers/nginx
