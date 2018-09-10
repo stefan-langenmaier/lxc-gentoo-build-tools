@@ -20,8 +20,8 @@ docker run -it \
 	"internal/kodi-builder:${DATE}" \
 		bash /container-specific-setup.sh
 
-#docker commit \
-#	"nextcloud-builder" \
-#	"stefan-langenmaier/nextcloud:${DATE}"
+docker commit \
+	"kodi-builder" \
+	"slangenmaier/kodi:${DATE}"
 
 #docker rm "nextcloud-builder"

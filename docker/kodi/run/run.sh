@@ -3,15 +3,20 @@ set -e
 set -x
 
 docker run -it \
-	--rm \
+	--net host \
 	--privileged \
+	--rm \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /data/cuboxi-packages:/usr/portage/packages:rw \
+	-v /mnt/full-data/vols/kodi-config:/root/.kodi:rw \
+	-v /mnt/full-data/vols/tv:/data/tv:ro \
+	-v /mnt/full-data/vols/music:/data/music:ro \
+	-d \
 	-entrypoint="/bin/bash" \
 	--name "kodi" \
-	"slangenmaier/kodi:2018-07-17" \
-		/bin/bash
+	"stefan-langenmaier/kodi:2018-07-22" \
+		kodi
 
 #docker commit \
 #	"nextcloud-builder" \

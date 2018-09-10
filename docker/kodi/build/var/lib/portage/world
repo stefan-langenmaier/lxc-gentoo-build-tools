@@ -6,4 +6,4 @@ media-libs/mesa
 media-sound/alsa-utils
 media-tv/kodi
 x11-libs/libdrm
-
+x11-libs/libxkbcommon
