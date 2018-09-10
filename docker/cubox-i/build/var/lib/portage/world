@@ -1,0 +1,16 @@
+app-admin/syslog-ng
+app-emulation/docker
+app-misc/screen
+app-portage/eix
+app-portage/gentoolkit
+net-dns/ddclient
+net-misc/dhcpcd
+net-misc/ntp
+net-misc/openssh
+sys-apps/smartmontools
+sys-fs/btrfs-progs
+sys-fs/cryptsetup
+sys-process/cronie
+sys-process/htop
+sys-process/iotop
+

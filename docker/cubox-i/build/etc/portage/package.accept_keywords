@@ -1,0 +1,37 @@
+=net-dns/ddclient-3.8.3 **
+
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-emulation/containerd-1.1.2 ~arm
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-go/go-md2man-1.0.6 ~arm
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-emulation/runc-1.0.0_rc5_p20180509 ~arm
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-emulation/docker-proxy-0.8.0_p20180626 ~arm
+# required by dev-go/blackfriday-1.4::gentoo
+# required by dev-go/go-md2man-1.0.6::gentoo
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-go/sanitized-anchor-name-0_pre20151027 ~arm
+# required by dev-go/go-md2man-1.0.6::gentoo
+# required by app-emulation/docker-18.06.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-go/blackfriday-1.4 ~arm
+# required by app-emulation/docker-18.06.1::gentoo[container-init]
+# required by @selected
+# required by @world (argument)
+=sys-process/tini-0.18.0 ~arm
+# required by @selected
+# required by @world (argument)
+=app-emulation/docker-18.06.1 ~arm
+
