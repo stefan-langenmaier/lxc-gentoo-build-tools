@@ -1,0 +1,6 @@
+delete /tmp/stage1root folder
+
+configure locales
+
+
+docker export gentoo-base-container | docker import - gentoo-base-image:latest
