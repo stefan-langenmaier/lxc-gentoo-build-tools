@@ -89,3 +89,23 @@
 # required by @selected
 # required by @world (argument)
 =dev-libs/rapidjson-9999 **
+
+
+# required by media-tv/kodi-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/flatbuffers-1.9.0 **
+# required by media-tv/kodi-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/libfstrcmp-0.7 **
+# required by media-libs/mesa-18.2.0-r1::gentoo
+# required by media-tv/kodi-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=x11-libs/libdrm-2.4.94 ~arm
+# required by media-tv/kodi-9999::gentoo
+# required by @selected
+# required by @world (argument)
+=media-video/ffmpeg-4.0.2 ~arm
+
