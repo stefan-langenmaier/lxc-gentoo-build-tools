@@ -6,6 +6,8 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m`
 
+docker rm gentoo-base-container || true
+
 docker run \
 	--cap-add SYS_PTRACE \
 	-v /usr/portage:/usr/portage:ro \
