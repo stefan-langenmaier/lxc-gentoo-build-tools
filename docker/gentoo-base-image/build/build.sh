@@ -13,7 +13,6 @@ docker run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	--entrypoint="/bin/bash" \
 	--name "gentoo-base-container" \
 	"slangenmaier/gentoo-base-image:latest" \
 		emerge -uDN world
