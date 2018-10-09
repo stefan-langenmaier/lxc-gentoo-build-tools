@@ -21,6 +21,8 @@ docker run -it \
 
 docker commit \
 	"nextcloud-builder" \
-	"slangenmaier/nextcloud:${DATE}"
+	"slangenmaier/nextcloud:latest"
 
-docker rm "nextcloud-builder"
+docker tag "slangenmaier/nextcloud:latest" "slangenmaier/nextcloud:${DATE}"
+
+#docker rm "nextcloud-builder"
