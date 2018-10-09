@@ -10,7 +10,7 @@ docker build . -t "internal/kodi-builder:${DATE}"
 
 docker rm "kodi-builder" || true
 
-docker run -it \
+docker run \
 	--cap-add SYS_PTRACE \
 	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
