@@ -10,11 +10,10 @@ docker build . -t "internal/nextcloud-builder:latest"
 
 docker rm "nextcloud-builder" || true
 
-docker run -it \
+docker run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
-	-entrypoint="/bin/bash" \
 	--name "nextcloud-builder" \
 	"internal/nextcloud-builder:latest" \
 		bash /container-specific-setup.sh
