@@ -12,6 +12,7 @@ docker rm "kodi-builder" || true
 
 docker run -it \
 	--cap-add SYS_PTRACE \
+	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /data/cuboxi-packages:/usr/portage/packages:rw \
@@ -22,6 +23,6 @@ docker run -it \
 
 docker commit \
 	"kodi-builder" \
-	"slangenmaier/kodi:${DATE}"
+	"slangenmaier/kodi:latest"
 
-#docker rm "nextcloud-builder"
+docker tag "slangenmaier/kodi:latest" "slangenmaier/kodi:${DATE}"
