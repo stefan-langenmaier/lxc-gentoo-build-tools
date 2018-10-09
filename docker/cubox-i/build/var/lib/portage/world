@@ -7,10 +7,10 @@ net-dns/ddclient
 net-misc/dhcpcd
 net-misc/ntp
 net-misc/openssh
+sys-apps/kexec-tools
 sys-apps/smartmontools
 sys-fs/btrfs-progs
 sys-fs/cryptsetup
 sys-process/cronie
 sys-process/htop
 sys-process/iotop
-
