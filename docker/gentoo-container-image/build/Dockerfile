@@ -1,7 +1,6 @@
 FROM slangenmaier/gentoo-base-image:latest
 ADD etc/inittab /etc/inittab
-RUN true &&\
-    sed -i 's/#rc_provide=.*$/rc_provide="net"/g' /etc/rc.conf &&\
+RUN sed -i 's/#rc_provide=.*$/rc_provide="net"/g' /etc/rc.conf 
 
 #RUN true &&\
 #    sed -i 's/#rc_controller_cgroups=.*$/rc_controller_cgroups="NO"/g' /etc/rc.conf &&\
