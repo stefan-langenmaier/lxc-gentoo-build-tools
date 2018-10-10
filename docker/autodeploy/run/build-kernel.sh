@@ -11,4 +11,4 @@ docker run \
 	--name "kernel-builder" \
 	"slangenmaier/autodeploy:latest" \
 		/bin/bash /build-kernel.sh || \
-docker start kernel-builder
+docker start -a kernel-builder
