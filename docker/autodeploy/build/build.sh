@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/autodeploy-builder:${DATE}"
+docker build . -t "internal/autodeploy-builder:latest"
 
 docker rm "autodeploy-builder" || true
 
@@ -16,7 +16,7 @@ docker run \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /data/cuboxi-packages:/usr/portage/packages:rw \
 	--name "autodeploy-builder" \
-	"internal/autodeploy-builder:${DATE}" \
+	"internal/autodeploy-builder:latest" \
 		bash /container-specific-setup.sh
 
 docker commit \

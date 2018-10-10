@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/jenkins-builder:${DATE}"
+docker build . -t "internal/jenkins-builder:latest"
 
 docker rm "jenkins-builder" || true
 
@@ -16,9 +16,8 @@ docker run  \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	-entrypoint="/bin/bash" \
 	--name "jenkins-builder" \
-	"internal/jenkins-builder:${DATE}" \
+	"internal/jenkins-builder:latest" \
 		bash /container-specific-setup.sh
 
 docker commit \

@@ -18,6 +18,7 @@ docker run \
 	"slangenmaier/gentoo-base-image:latest" \
 		emerge -uDN world
 
+#to lose the history and flatten the image
 docker export gentoo-base-container | docker import - "slangenmaier/gentoo-base-image:latest"
 
 docker tag "slangenmaier/gentoo-base-image:latest" "slangenmaier/gentoo-base-image:${DATE}"

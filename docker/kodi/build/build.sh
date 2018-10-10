@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/kodi-builder:${DATE}"
+docker build . -t "internal/kodi-builder:latest"
 
 docker rm "kodi-builder" || true
 
@@ -17,7 +17,7 @@ docker run \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	--name "kodi-builder" \
-	"internal/kodi-builder:${DATE}" \
+	"internal/kodi-builder:latest" \
 		bash /container-specific-setup.sh
 
 docker commit \
