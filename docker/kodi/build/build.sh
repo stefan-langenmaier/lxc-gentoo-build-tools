@@ -15,8 +15,7 @@ docker run \
 	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /data/cuboxi-packages:/usr/portage/packages:rw \
-	-entrypoint="/bin/bash" \
+	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	--name "kodi-builder" \
 	"internal/kodi-builder:${DATE}" \
 		bash /container-specific-setup.sh
