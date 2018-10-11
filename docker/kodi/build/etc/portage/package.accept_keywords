@@ -4,6 +4,8 @@
 =dev-libs/libfmt-5.1.0 ~arm
 =dev-libs/rapidjson-1.1.0-r1 ~arm
 
+dev-db/mariadb-connector-c ~arm
+
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
