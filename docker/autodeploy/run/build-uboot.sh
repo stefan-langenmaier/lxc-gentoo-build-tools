@@ -10,4 +10,4 @@ docker run \
 	--name "uboot-builder" \
 	"slangenmaier/autodeploy:latest" \
 		/bin/bash /build-uboot.sh || \
-docker start uboot-builder
+docker start -a uboot-builder
