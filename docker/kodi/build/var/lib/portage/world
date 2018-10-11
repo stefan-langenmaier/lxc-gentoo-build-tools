@@ -1,7 +1,6 @@
 app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
-dev-db/mariadb-connector-c
 dev-libs/libinput
 media-libs/mesa
 media-sound/alsa-utils
