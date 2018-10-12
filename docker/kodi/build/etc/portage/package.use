@@ -1,4 +1,4 @@
-media-tv/kodi mariadb -wayland gles -pulseaudio alsa gbm -X -opengl upnp webserver zeroconf samba cec
+media-tv/kodi -wayland gles -pulseaudio alsa gbm -X -opengl upnp webserver zeroconf samba cec
 
 # required by sys-libs/ldb-1.1.29-r1::gentoo
 # required by net-fs/samba-4.5.16::gentoo
