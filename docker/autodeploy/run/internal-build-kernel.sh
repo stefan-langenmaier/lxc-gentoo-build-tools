@@ -26,3 +26,7 @@ cd /usr/src/linux
 make oldconfig
 make -j2
 make dtbs
+
+cp /usr/src/linux/arch/arm/boot/zImage /autodeploy-exchange/zImage
+cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i.dtb /autodeploy-exchange/imx6q-cubox-i.dtb
+

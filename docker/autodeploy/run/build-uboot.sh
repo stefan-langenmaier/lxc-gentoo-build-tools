@@ -4,6 +4,7 @@ set -x
 
 docker run \
 	-v ${PWD}/internal-build-uboot.sh:/build-uboot.sh:ro \
+	-v autodeploy-exchange:/autodeploy-exchange:rw \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
