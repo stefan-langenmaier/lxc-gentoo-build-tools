@@ -3,4 +3,5 @@ app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
 dev-vcs/git
+sys-block/parted
 sys-devel/bc
