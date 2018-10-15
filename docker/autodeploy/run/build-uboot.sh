@@ -2,8 +2,10 @@
 set -e
 set -x
 
+OUTER_FOLDER=/root/lxc-gentoo-build-tools/docker/autodeploy/run
+
 docker run \
-	-v ${PWD}/internal-build-uboot.sh:/build-uboot.sh:ro \
+	-v ${OUTER_FOLDER}/internal-build-uboot.sh:/build-uboot.sh:ro \
 	-v autodeploy-exchange:/autodeploy-exchange:rw \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
