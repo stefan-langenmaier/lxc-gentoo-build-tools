@@ -8,7 +8,7 @@ DATE=`date +%Y-%m-%d`
 
 docker build . -t "internal/kodi-builder:latest"
 
-docker rm "kodi-builder" || true
+#docker rm "kodi-builder" || true
 
 docker run \
 	--cap-add SYS_PTRACE \
@@ -18,7 +18,8 @@ docker run \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	--name "kodi-builder" \
 	"internal/kodi-builder:latest" \
-		bash /container-specific-setup.sh
+		bash /container-specific-setup.sh || \
+docker start kodi-builder
 
 docker commit \
 	"kodi-builder" \
