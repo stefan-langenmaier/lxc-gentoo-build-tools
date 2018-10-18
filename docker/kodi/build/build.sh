@@ -19,7 +19,7 @@ docker run \
 	--name "kodi-builder" \
 	"internal/kodi-builder:latest" \
 		bash /container-specific-setup.sh || \
-docker start kodi-builder
+docker start -a kodi-builder
 
 docker commit \
 	"kodi-builder" \
