@@ -17,3 +17,7 @@ cp /autodeploy-exchange/zImage /root/cubox-i-autodeploy-image/kernel-bin/
 cp /autodeploy-exchange/imx6q-cubox-i.dtb /root/cubox-i-autodeploy-image/kernel-bin/
 
 bash create-autodeploy-image.sh
+
+git config --global user.email "stefan.langenmaier@gmail.com"
+git config --global user.name "Stefan Langenmaier"
+bash create-tag.sh

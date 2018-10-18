@@ -6,6 +6,7 @@ OUTER_FOLDER=/root/lxc-gentoo-build-tools/docker/autodeploy/run
 
 docker run \
 	--privileged \
+	-e TOKEN=$1 \
 	-v /dev/console:/dev/console:ro \
 	-v ${OUTER_FOLDER}/internal-build-image.sh:/build-image.sh:ro \
 	-v autodeploy-exchange:/autodeploy-exchange:rw \
