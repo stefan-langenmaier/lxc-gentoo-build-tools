@@ -5,7 +5,6 @@ set -x
 OUTER_FOLDER=/root/lxc-gentoo-build-tools/docker/autodeploy/run
 
 docker run \
-	-it \
 	--privileged \
 	--tmpfs /run \
 	-v ${OUTER_FOLDER}/internal-build-tar.sh:/build-tar.sh:ro \
