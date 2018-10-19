@@ -18,8 +18,8 @@ cp /autodeploy-exchange/imx6q-cubox-i.dtb /root/cubox-i-autodeploy-image/kernel-
 
 bash create-autodeploy-image.sh
 
-if [ ! -z ${TOKEN+x} ]; then
-	echo TOKEN SET
+if [ ! -z ${TOKEN} ]; then
+	echo "TOKEN SET"
 	git config --global user.email "stefan.langenmaier@gmail.com"
 	git config --global user.name "Stefan Langenmaier"
 	bash create-tag.sh
