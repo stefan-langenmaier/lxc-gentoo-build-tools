@@ -14,7 +14,7 @@ docker run \
 	--cap-add SYS_PTRACE \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /data/cuboxi-packages:/usr/portage/packages:rw \
+	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	--name "autodeploy-builder" \
 	"internal/autodeploy-builder:latest" \
 		bash /container-specific-setup.sh
