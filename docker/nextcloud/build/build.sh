@@ -11,6 +11,7 @@ docker build . -t "internal/nextcloud-builder:latest"
 docker rm "nextcloud-builder" || true
 
 docker run \
+	--cap-add SYS_PTRACE \
 	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
