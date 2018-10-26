@@ -1,3 +1,4 @@
 www-apps/nextcloud mysql sqlite
 app-eselect/eselect-php fpm
 dev-lang/php mysql sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader truetype
+dev-db/mariadb profiling
