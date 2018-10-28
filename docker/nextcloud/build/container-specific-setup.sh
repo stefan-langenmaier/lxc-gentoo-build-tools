@@ -12,6 +12,7 @@ rc-update add mysql default
 crontab -l > mycron
 #echo new cron into cron file
 echo "*/15 * * * * /bin/su nginx -s /usr/bin/php /var/www/localhost/htdocs/nextcloud/cron.php" >> mycron
+echo "13 5 3 * * certbot renew --nginx" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
