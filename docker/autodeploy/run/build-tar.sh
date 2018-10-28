@@ -17,4 +17,4 @@ docker run \
 	--name "tar-builder" \
 	"slangenmaier/autodeploy:latest" \
 		bash /build-tar.sh || \
-docker start tar-builder
+docker start -a tar-builder
