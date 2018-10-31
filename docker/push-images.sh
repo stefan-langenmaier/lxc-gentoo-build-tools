@@ -2,12 +2,11 @@
 set -e
 set -x
 
-DATE=`date +%Y-%m`
+DATE_M=`date +%Y-%m`
+DATE_D="${DATE_M}-01"
 
-docker push slangenmaier/gentoo-base-image:$DATE
+docker push slangenmaier/gentoo-base-image:$DATE_M
 
-DATE=`date +%Y-%m-%d`
-
-docker push slangenmaier/nextcloud:$DATE
-docker push slangenmaier/kodi:$DATE
-docker push slangenmaier/jenkins:$DATE
+docker push slangenmaier/nextcloud:$DATE_D
+docker push slangenmaier/kodi:$DATE_D
+docker push slangenmaier/jenkins:$DATE_D
