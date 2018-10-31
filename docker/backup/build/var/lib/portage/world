@@ -1,4 +1,5 @@
+app-backup/snapper
 app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
-app-backup/snapper
+sys-process/cronie
