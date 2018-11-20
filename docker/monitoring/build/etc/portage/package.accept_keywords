@@ -1,0 +1,8 @@
+=app-metrics/prometheus-2.4.3 **
+
+# required by app-metrics/prometheus-2.4.3::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-util/promu-0.1.0_p20180227 **
+
+=app-metrics/collectd-5.8.1 ~arm
