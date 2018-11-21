@@ -1,113 +1,70 @@
-=media-video/ffmpeg-4.0.1 **
->=media-libs/mesa-18.1.4 ~arm
 =media-tv/kodi-9999 **
-=dev-libs/libfmt-5.1.0 ~arm
-=dev-libs/rapidjson-1.1.0-r1 ~arm
 
-#dev-db/mariadb-connector-c ~arm
+=dev-libs/libfmt-5.2.1 **
+=dev-libs/rapidjson-1.1.0-r1 **
 
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-libs/libcdio-2.0.0-r1 ~arm
-# required by dev-java/icedtea-web-1.6.2::gentoo
-# required by dev-java/icedtea-bin-3.8.0::gentoo[webstart]
-=virtual/jdk-1.8.0-r3 ~arm
+=dev-libs/flatbuffers-1.10.0 **
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
 =media-fonts/roboto-2.138 ~arm
-# required by dev-java/icedtea-web-1.6.2::gentoo
-# required by dev-java/icedtea-bin-3.8.0::gentoo[webstart]
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/java-config-2.2.0-r4 ~arm
-# required by dev-java/icedtea-bin-3.8.0::gentoo[webstart]
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
+=media-video/ffmpeg-4.1 ~arm
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/icedtea-web-1.6.2 ~arm
-# required by dev-java/icedtea-bin-3.8.0::gentoo
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
+=virtual/jre-1.8.0-r1 ~arm
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=app-eselect/eselect-java-0.4.0 ~arm
+=dev-libs/libfstrcmp-0.7 **
 # required by dev-java/java-config-2.2.0-r4::gentoo
-# required by dev-java/icedtea-bin-3.8.0::gentoo
+# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
 # required by virtual/jdk-1.8.0-r3::gentoo
 # required by virtual/jre-1.8.0-r1::gentoo
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
 =sys-apps/baselayout-java-0.1.0 ~arm
-# required by virtual/jpeg-62::gentoo
-# required by dev-java/icedtea-bin-3.8.0::gentoo
+# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
 # required by virtual/jdk-1.8.0-r3::gentoo
 # required by virtual/jre-1.8.0-r1::gentoo
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=media-libs/libjpeg-turbo-1.5.3-r1 ~arm
-# required by media-tv/kodi-9999::gentoo[alsa]
+=dev-java/java-config-2.2.0-r4 ~arm
+# required by virtual/jre-1.8.0-r1::gentoo
+# required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=media-libs/alsa-lib-1.1.6-r1 ~arm
-# required by dev-libs/libcec-4.0.2-r2::gentoo
-# required by media-tv/kodi-9999::gentoo[cec]
+=virtual/jdk-1.8.0-r3 ~arm
+# required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-libs/libplatform-2.1.0.1 ~arm
-# required by dev-java/icedtea-web-1.6.2::gentoo
-# required by dev-java/icedtea-bin-3.8.0::gentoo[webstart]
-# required by virtual/jdk-1.8.0-r3::gentoo
-=virtual/jre-1.8.0-r1 ~arm
+=dev-python/pycryptodome-3.6.6 ~arm
+# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
 # required by virtual/jdk-1.8.0-r3::gentoo
 # required by virtual/jre-1.8.0-r1::gentoo
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/icedtea-bin-3.8.0 ~arm
-# required by media-tv/kodi-9999::gentoo[cec]
-# required by @selected
-# required by @world (argument)
-=dev-libs/libcec-4.0.2-r2 ~arm
+=app-eselect/eselect-java-0.4.0 ~arm
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
 =dev-libs/crossguid-0_pre20150817 ~arm
-
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-libs/libfmt-9999 **
+=dev-libs/libcdio-2.0.0-r1 ~arm
+# required by virtual/jdk-1.8.0-r3::gentoo
+# required by virtual/jre-1.8.0-r1::gentoo
 # required by media-tv/kodi-9999::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-libs/rapidjson-9999 **
-
-
-# required by media-tv/kodi-9999::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-libs/flatbuffers-1.9.0 **
-# required by media-tv/kodi-9999::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-libs/libfstrcmp-0.7 **
-# required by media-libs/mesa-18.2.0-r1::gentoo
-# required by media-tv/kodi-9999::gentoo
-# required by @selected
-# required by @world (argument)
-=x11-libs/libdrm-2.4.96 ~arm
-# required by media-tv/kodi-9999::gentoo
-# required by @selected
-# required by @world (argument)
-=media-video/ffmpeg-4.0.2 ~arm
-
+=dev-java/icedtea-bin-3.9.0-r1 ~arm
