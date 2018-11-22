@@ -1,4 +1,4 @@
-=dev-util/jenkins-bin-2.138.1 **
+>=dev-util/jenkins-bin-2:lts **
 
 
 # required by dev-java/icedtea-bin-3.8.0::gentoo
