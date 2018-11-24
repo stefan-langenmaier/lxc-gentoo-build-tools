@@ -17,4 +17,4 @@ docker run \
 	-p 7070:8080 \
 	--entrypoint="/sbin/init" \
 	--name "jenkins" \
-	"slangenmaier/jenkins:latest"
+	"slangenmaier/jenkins:2018-11-24"
