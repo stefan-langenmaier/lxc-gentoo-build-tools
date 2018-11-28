@@ -12,3 +12,7 @@ dev-java/icedtea -alsa -cups -webstart
 # required by @selected
 # required by @world (argument)
 >=media-libs/mesa-18.2.5 gles2
+# required by media-tv/kodi-9999::gentoo[webserver]
+# required by @selected
+# required by @world (argument)
+>=net-libs/libmicrohttpd-0.9.59 messages

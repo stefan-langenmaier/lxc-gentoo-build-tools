@@ -8,18 +8,22 @@ DATE=`date +%Y-%m-%d`
 
 docker build . -t "internal/kodi-builder:latest"
 
-#docker rm "kodi-builder" || true
+CNAME=kodi-builder
 
-docker run \
-	--cap-add SYS_PTRACE \
-	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	--name "kodi-builder" \
-	"internal/kodi-builder:latest" \
-		bash /container-specific-setup.sh || \
-docker start -a kodi-builder
+if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != $CNAME ]]
+then
+	docker run \
+		--cap-add SYS_PTRACE \
+		--tmpfs /run \
+		-v /usr/portage:/usr/portage:ro \
+		-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
+		-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
+		--name "kodi-builder" \
+		"internal/kodi-builder:latest" \
+			bash /container-specific-setup.sh || \
+else
+	docker start -a kodi-builder
+fi
 
 docker commit \
 	"kodi-builder" \
