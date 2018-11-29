@@ -20,7 +20,7 @@ then
 		-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 		--name "kodi-builder" \
 		"internal/kodi-builder:latest" \
-			bash /container-specific-setup.sh || \
+			bash /container-specific-setup.sh
 else
 	docker start -a kodi-builder
 fi
