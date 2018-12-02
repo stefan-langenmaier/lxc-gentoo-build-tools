@@ -5,7 +5,7 @@ set -x
 if [ ! -d "/root/cubox-i-autodeploy-image" ]
 then
     	cd /root
-        git clone "https://github.com/stefan-langenmaier/cubox-i-autodeploy-image"
+        git clone "git@github.com:stefan-langenmaier/cubox-i-autodeploy-image.git"
 #else
 #       git fetch
 fi
