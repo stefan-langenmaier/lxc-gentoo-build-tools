@@ -17,6 +17,7 @@ docker run \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /root/.ssh/id_rsa:/root/.ssh/id_rsa:ro \
+	-v /root/.ssh/known_hosts:/root/.ssh/known_hosts:ro \
 	--name "autodeploy-image-builder" \
 	"slangenmaier/autodeploy:latest" \
 		/bin/bash /build-image.sh
