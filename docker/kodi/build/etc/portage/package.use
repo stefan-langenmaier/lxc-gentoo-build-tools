@@ -1,4 +1,5 @@
 media-tv/kodi -wayland gles -pulseaudio alsa gbm -X -opengl upnp webserver zeroconf
+~media-tv/kodi-9999 PYTHON_TARGETS: -* python2_7 PYTHON_SINGLE_TARGET: -* python2_7
 
 media-video/ffmpeg bzip2 encode gpl hardcoded-tables iconv network openssl postproc threads zlib alsa cpudetection libdrm mp3 openh264 opus theora vorbis vpx webp x264 x265 openssl
 dev-java/icedtea-bin -alsa -cups -webstart
