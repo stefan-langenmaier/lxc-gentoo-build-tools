@@ -3,6 +3,12 @@ www-servers/nginx ~arm
 app-crypt/certbot ~arm
 app-crypt/certbot-nginx ~arm
 
+# required by app-crypt/certbot-0.29.1::gentoo
+# required by app-crypt/certbot-nginx-0.29.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-crypt/acme-0.29.1 ~arm
+
 # required by app-crypt/certbot-0.28.0::gentoo
 # required by app-crypt/certbot-nginx-0.28.0::gentoo
 # required by @selected
