@@ -7,9 +7,9 @@ mkdir /lib/firmware/imx/sdma -p
 
 if [ ! -e "/lib/firmware/vpu_fw_imx6q.bin" ]
 then
-	wget http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-7.4.bin
-	dd if=firmware-imx-7.4.bin bs=36909 skip=1 | tar xj
-	cp firmware-imx-7.4/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware
+	wget http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-7.9.bin
+	dd if=firmware-imx-7.9.bin bs=38868 skip=1 | tar xj
+	cp firmware-imx-7.9/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware
 fi
 
 if [ ! -e "/lib/firmware/imx/sdma/sdma-imx6q.bin" ]
