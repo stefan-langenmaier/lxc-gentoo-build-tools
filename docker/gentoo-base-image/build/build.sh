@@ -16,7 +16,7 @@ docker run \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	--name "gentoo-base-container" \
 	"slangenmaier/gentoo-base-image:latest" \
-		emerge -uDN world
+		bash /container-specific-setup.sh
 
 #to lose the history and flatten the image
 docker export gentoo-base-container | docker import - "slangenmaier/gentoo-base-image:latest"
