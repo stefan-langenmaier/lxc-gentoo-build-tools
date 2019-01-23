@@ -3,6 +3,7 @@ set -e
 set -x
 
 docker image prune -f # all dangling
-docker image prune -f --all --filter until=768h # 31d
+docker image prune -f --all --filter until=768h # 32d
 
-docker container prune -f
+# removes all stopped containers of a certain age
+docker container prune -f --filter until=168h #7d
