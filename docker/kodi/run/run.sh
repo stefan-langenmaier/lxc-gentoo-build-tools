@@ -9,7 +9,7 @@ docker run -it \
 	-d \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /data/cuboxi-packages:/usr/portage/packages:rw \
+	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /mnt/full-data/vols/kodi-config:/root/.kodi:rw \
 	-v /mnt/full-data/vols/tv:/data/tv:ro \
 	-v /mnt/full-data/vols/music:/data/music:ro \

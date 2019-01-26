@@ -9,7 +9,7 @@ docker run \
 	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /mnt/full-data/cuboxi-packages:/usr/portage/packages:rw \
+	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /var/run/docker.sock:/var/run/docker.sock \
 	-v /usr/bin/docker:/usr/bin/docker \
 	-v /root/.docker/config.json:/var/lib/jenkins/.docker/config.json \
