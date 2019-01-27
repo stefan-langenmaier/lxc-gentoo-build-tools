@@ -8,7 +8,7 @@ dev-java/icedtea -alsa -cups -webstart
 # required by media-tv/kodi-9999::gentoo[python_single_target_python3_6]
 # required by @selected
 # required by @world (argument)
->=dev-lang/python-3.6.5 sqlite
+dev-lang/python sqlite
 # required by media-tv/kodi-9999::gentoo[gles]
 # required by @selected
 # required by @world (argument)
