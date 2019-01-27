@@ -1,5 +1,6 @@
 app-metrics/collectd
 app-metrics/prometheus
+app-metrics/alertmanager
 app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
