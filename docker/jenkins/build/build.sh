@@ -6,22 +6,27 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/jenkins-builder:latest"
+CNAME=jenkins-builder
 
-docker rm "jenkins-builder" || true
+docker build . -t "internal/$CNAME:latest"
 
-docker run  \
-	--cap-add SYS_PTRACE \
-	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	--name "jenkins-builder" \
-	"internal/jenkins-builder:latest" \
-		bash /container-specific-setup.sh
+if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != $CNAME ]]
+then
+	docker run  \
+		--cap-add SYS_PTRACE \
+		--tmpfs /run \
+		-v /usr/portage:/usr/portage:ro \
+		-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
+		-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
+		--name "$CNAME" \
+		"internal/$CNAME:latest" \
+			bash /container-specific-setup.sh
+else
+	docker start -a $CNAME
+fi
 
 docker commit \
-	"jenkins-builder" \
+	"$CNAME" \
 	"slangenmaier/jenkins:latest"
 
 docker tag "slangenmaier/jenkins:latest" "slangenmaier/jenkins:${DATE}"
