@@ -3,62 +3,56 @@ www-servers/nginx ~arm
 app-crypt/certbot ~arm
 app-crypt/certbot-nginx ~arm
 
-# required by app-crypt/certbot-0.29.1::gentoo
-# required by app-crypt/certbot-nginx-0.29.1::gentoo
-# required by @selected
-# required by @world (argument)
-=app-crypt/acme-0.29.1 ~arm
-
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-python/configargparse-0.12.0 ~arm
-# required by app-crypt/acme-0.28.0::gentoo
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
+# required by app-crypt/acme-0.30.1::gentoo
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
 # required by @selected
 # required by @world (argument)
 =dev-python/pyrfc3339-1.0 ~arm
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
-# required by @selected
-# required by @world (argument)
-=app-crypt/acme-0.28.0 ~arm
-# required by @selected
-# required by @world (argument)
-=dev-php/pecl-apcu-5.1.12 **
-# required by dev-python/parsedatetime-2.4-r1::gentoo
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-python/future-0.16.0 ~arm
-# required by app-crypt/acme-0.28.0::gentoo
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
+# required by app-crypt/acme-0.30.1::gentoo
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
 # required by @selected
 # required by @world (argument)
 =dev-python/josepy-1.1.0 ~arm
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-python/zope-component-4.4.1 ~arm
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
+=dev-php/pecl-apcu-5.1.16 **
+# required by dev-python/parsedatetime-2.4-r1::gentoo
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-python/configobj-5.0.6 ~arm
-# required by app-crypt/acme-0.28.0::gentoo
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
+=dev-python/future-0.16.0 ~arm
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-python/requests-toolbelt-0.8.0 ~arm
-# required by app-crypt/certbot-0.28.0::gentoo
-# required by app-crypt/certbot-nginx-0.28.0::gentoo
+=dev-python/configargparse-0.13.0 ~arm
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
 # required by @selected
 # required by @world (argument)
 =dev-python/parsedatetime-2.4-r1 ~arm
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-crypt/acme-0.30.1 ~arm
+# required by app-crypt/acme-0.30.1::gentoo
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/requests-toolbelt-0.8.0 ~arm
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/zope-component-4.4.1 ~arm
+# required by app-crypt/certbot-0.30.1-r1::gentoo
+# required by app-crypt/certbot-nginx-0.30.1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-python/configobj-5.0.6 ~arm
 
