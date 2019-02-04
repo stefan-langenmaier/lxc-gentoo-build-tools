@@ -1,4 +1,5 @@
 #!/bin/bash
+#        -v /mnt/full-data/vols/nextcloud-config/news-app/ItemMapper.php:/var/www/localhost/htdocs/nextcloud/apps/news/lib/Db/ItemMapper.php:rw \
 
 docker run \
 	--tmpfs /run \
@@ -6,7 +7,6 @@ docker run \
         -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
         -v /mnt/full-data/vols/nextcloud-config/letsencrypt:/etc/letsencrypt:rw \
         -v /mnt/full-data/vols/nextcloud-data:/data/nextcloud:rw \
-        -v /mnt/full-data/vols/nextcloud-config/news-app/ItemMapper.php:/var/www/localhost/htdocs/nextcloud/apps/news/lib/Db/ItemMapper.php:rw \
         -v /mnt/full-data/vols/nextcloud-config/nextcloud/config.php:/var/www/localhost/htdocs/nextcloud/config/config.php:rw \
         -v /mnt/full-data/vols/nextcloud-config/nginx/nginx.conf:/etc/nginx/nginx.conf:rw \
         -v /mnt/full-data/vols/nextcloud-config/php/fpm-php7.2/fpm.d/www.conf:/etc/php/fpm-php7.2/fpm.d/www.conf:rw \
@@ -18,5 +18,5 @@ docker run \
 	-p 3306:3306 \
 	-d \
         --name "nextcloud" \
-        "slangenmaier/nextcloud:2018-10-27" \
+        "slangenmaier/nextcloud:latest" \
 	        /sbin/init
