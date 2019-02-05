@@ -1,6 +1,3 @@
-#!/bin/bash
-#        -v /mnt/full-data/vols/nextcloud-config/news-app/ItemMapper.php:/var/www/localhost/htdocs/nextcloud/apps/news/lib/Db/ItemMapper.php:rw \
-
 docker run \
 	--tmpfs /run \
 	-v /usr/portage:/usr/portage:ro \
@@ -15,7 +12,7 @@ docker run \
         -v /mnt/full-data/vols/nextcloud-db:/var/lib/mysql:rw \
 	-p 443:443 \
 	-p 80:80 \
-	-p 3306:3306 \
+	--rm \
 	-d \
         --name "nextcloud" \
         "slangenmaier/nextcloud:latest" \
