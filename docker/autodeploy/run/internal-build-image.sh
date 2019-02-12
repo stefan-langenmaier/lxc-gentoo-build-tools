@@ -15,6 +15,8 @@ cp /autodeploy-exchange/SPL /root/cubox-i-autodeploy-image/u-boot-bin/
 cp /autodeploy-exchange/u-boot.img /root/cubox-i-autodeploy-image/u-boot-bin/
 cp /autodeploy-exchange/zImage /root/cubox-i-autodeploy-image/kernel-bin/
 cp /autodeploy-exchange/imx6q-cubox-i.dtb /root/cubox-i-autodeploy-image/kernel-bin/
+cp /autodeploy-exchange/imx6q-cubox-i-emmc-som-v15.dtb /root/cubox-i-autodeploy-image/kernel-bin/
+cp /autodeploy-exchange/imx6q-cubox-i-som-v15.dtb /root/cubox-i-autodeploy-image/kernel-bin/
 
 bash create-autodeploy-image.sh
 
