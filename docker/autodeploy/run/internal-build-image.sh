@@ -2,13 +2,15 @@
 set -e
 set -x
 
-if [ ! -d "/root/cubox-i-autodeploy-image" ]
+cd /root
+
+if [ -d "/root/cubox-i-autodeploy-image" ]
 then
-    	cd /root
-        git clone "git@github.com:stefan-langenmaier/cubox-i-autodeploy-image.git"
-#else
-#       git fetch
+	rm -rf /root/cubox-i-autodeploy-image
 fi
+
+git clone "git@github.com:stefan-langenmaier/cubox-i-autodeploy-image.git"
+
 cd /root/cubox-i-autodeploy-image
 
 cp /autodeploy-exchange/SPL /root/cubox-i-autodeploy-image/u-boot-bin/
