@@ -6,9 +6,9 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/kodi-builder:latest"
-
 CNAME=kodi-builder
+
+docker build . -t "internal/$CNAME:latest"
 
 if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != $CNAME ]]
 then
@@ -26,7 +26,7 @@ else
 fi
 
 docker commit \
-	"kodi-builder" \
+	"$CNAME" \
 	"slangenmaier/kodi:latest"
 
 docker tag "slangenmaier/kodi:latest" "slangenmaier/kodi:${DATE}"
