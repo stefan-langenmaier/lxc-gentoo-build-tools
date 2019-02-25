@@ -6,3 +6,5 @@ dev-java/icedtea-bin -alsa -cups -webstart
 dev-java/icedtea -alsa -cups -webstart
 
 media-libs/mesa gles2
+
+net-libs/libmicrohttpd messages
