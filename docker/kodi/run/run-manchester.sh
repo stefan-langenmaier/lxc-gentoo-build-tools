@@ -15,5 +15,5 @@ docker run \
 	-v /mnt/full-data/vols/kodi-config:/root/.kodi:rw \
 	-entrypoint="/bin/bash" \
 	--name "kodi" \
-	"slangenmaier/kodi:2018-10-22" \
+	"slangenmaier/kodi:latest" \
 		kodi
