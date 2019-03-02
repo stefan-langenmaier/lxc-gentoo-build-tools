@@ -5,7 +5,7 @@ docker run \
         -v /mnt/full-data/vols/nextcloud-data:/data/nextcloud:rw \
         -v /data/nextcloud-config/letsencrypt:/etc/letsencrypt:rw \
         -v /data/nextcloud-config/nextcloud/config.php:/var/www/localhost/htdocs/nextcloud/config/config.php:rw \
-        -v /data/nextcloud-config/nginx/nginx.conf:/etc/nginx/nginx.conf:ro \
+        -v /data/nextcloud-config/nginx/nginx.conf:/etc/nginx/nginx.conf:rw \
         -v /data/nextcloud-config/php/fpm-php7.2/fpm.d/www.conf:/etc/php/fpm-php7.2/fpm.d/www.conf:ro \
         -v /data/nextcloud-config/php/fpm-php7.2/php.ini:/etc/php/fpm-php7.2/php.ini:ro \
 	-p 443:443 \
