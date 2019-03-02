@@ -7,9 +7,9 @@ mkdir /lib/firmware/imx/sdma -p
 
 if [ ! -e "/lib/firmware/vpu_fw_imx6q.bin" ]
 then
-	wget http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-7.9.bin
-	dd if=firmware-imx-7.9.bin bs=38868 skip=1 | tar xj
-	cp firmware-imx-7.9/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware
+	wget http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-8.0.bin
+	dd if=firmware-imx-8.0.bin bs=37180 skip=1 | tar xj
+	cp firmware-imx-8.0/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware
 fi
 
 if [ ! -e "/lib/firmware/imx/sdma/sdma-imx6q.bin" ]
@@ -29,4 +29,6 @@ make dtbs
 
 cp /usr/src/linux/arch/arm/boot/zImage /autodeploy-exchange/zImage
 cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i.dtb /autodeploy-exchange/imx6q-cubox-i.dtb
+cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-emmc-som-v15.dtb /autodeploy-exchange/imx6q-cubox-i-emmc-som-v15.dtb
+cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-som-v15.dtb /autodeploy-exchange/imx6q-cubox-i-som-v15.dtb
 

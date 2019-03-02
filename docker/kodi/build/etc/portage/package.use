@@ -1,19 +1,10 @@
 media-tv/kodi -wayland gles -pulseaudio alsa gbm -X -opengl upnp webserver zeroconf
-~media-tv/kodi-9999 PYTHON_TARGETS: -* python2_7 PYTHON_SINGLE_TARGET: -* python2_7
+#media-tv/kodi PYTHON_TARGETS: -* python2_7 PYTHON_SINGLE_TARGET: -* python2_7
 
 media-video/ffmpeg bzip2 encode gpl hardcoded-tables iconv network openssl postproc threads zlib alsa cpudetection libdrm mp3 openh264 opus theora vorbis vpx webp x264 x265 openssl
 dev-java/icedtea-bin -alsa -cups -webstart
 dev-java/icedtea -alsa -cups -webstart
 
-# required by media-tv/kodi-9999::gentoo[python_single_target_python3_6]
-# required by @selected
-# required by @world (argument)
-dev-lang/python sqlite
-# required by media-tv/kodi-9999::gentoo[gles]
-# required by @selected
-# required by @world (argument)
->=media-libs/mesa-18.2.5 gles2
-# required by media-tv/kodi-9999::gentoo[webserver]
-# required by @selected
-# required by @world (argument)
->=net-libs/libmicrohttpd-0.9.59 messages
+media-libs/mesa gles2
+
+net-libs/libmicrohttpd messages
