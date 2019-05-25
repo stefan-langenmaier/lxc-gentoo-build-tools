@@ -8,3 +8,8 @@ dev-java/icedtea -alsa -cups -webstart
 media-libs/mesa gles2
 
 net-libs/libmicrohttpd messages
+
+# required by media-tv/kodi-18.2::gentoo
+# required by @selected
+# required by @world (argument)
+net-misc/curl http2
