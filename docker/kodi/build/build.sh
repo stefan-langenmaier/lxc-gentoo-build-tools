@@ -8,13 +8,13 @@ DATE=`date +%Y-%m-%d`
 
 CNAME=kodi-builder
 
-OLD_IMAGE=$(docker images --filter=reference='internal/kodi-builder:latest' --format '{{.ID}}')
+OLD_IMAGE_ID=$(docker images --filter=reference='internal/kodi-builder:latest' --format '{{.ID}}')
 
 docker build . -t "internal/$CNAME:latest"
 
-NEW_IMAGE=$(docker images --filter=reference='internal/kodi-builder:latest' --format '{{.ID}}')
+NEW_IMAGE_ID=$(docker images --filter=reference='internal/kodi-builder:latest' --format '{{.ID}}')
 
-if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != $CNAME ]]
+if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != '' && $NEW_IMAGE_ID != $OLD_IMAGE_ID ]]
 then
 	docker rm "kodi-builder"
 fi
