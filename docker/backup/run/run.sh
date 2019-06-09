@@ -19,5 +19,4 @@ docker run \
 	-v /mnt/full-root:/mnt/full-root:rw \
 	--entrypoint="/sbin/init" \
 	--name "backup" \
-		"slangenmaier/backup:2018-11-01"
-
+		"slangenmaier/backup:latest"
