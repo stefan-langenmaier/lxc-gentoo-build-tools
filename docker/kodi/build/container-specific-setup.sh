@@ -1,3 +1,3 @@
 #!/bin/bash
 
-emerge -uDN world -j1
+emerge -uDN world --with-bdeps=y -j1
