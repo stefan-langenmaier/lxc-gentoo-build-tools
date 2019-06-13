@@ -6,9 +6,18 @@ cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 
-docker build . -t "internal/nextcloud-builder:latest"
-
 CNAME=nextcloud-builder
+
+OLD_IMAGE_ID=$(docker images --filter=reference="internal/${CNAME}:latest" --format '{{.ID}}')
+
+docker build . -t "internal/$CNAME:latest"
+
+NEW_IMAGE_ID=$(docker images --filter=reference="internal/${CNAME}:latest" --format '{{.ID}}')
+
+if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != '' && $NEW_IMAGE_ID != $OLD_IMAGE_ID ]]
+then
+	docker rm "${CNAME}"
+fi
 
 if [[ $(docker ps -a --filter "name=^/$CNAME$" --format '{{.Names}}') != $CNAME ]]
 then
@@ -19,7 +28,7 @@ then
 		-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 		-v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
 		--name $CNAME \
-		"internal/nextcloud-builder:latest" \
+		"internal/${CNAME}:latest" \
 			bash /container-specific-setup.sh
 else
 	docker start -a $CNAME

@@ -2,6 +2,7 @@ app-crypt/certbot-nginx
 app-misc/screen
 dev-db/mariadb
 dev-php/pecl-apcu
+dev-python/cffi
 mail-mta/ssmtp
 sys-process/cronie
 www-apps/nextcloud
