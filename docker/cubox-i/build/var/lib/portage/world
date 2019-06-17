@@ -7,6 +7,7 @@ net-dns/ddclient
 net-misc/dhcpcd
 net-misc/ntp
 net-misc/openssh
+net-wireless/wireless-regdb
 sys-apps/kexec-tools
 sys-apps/smartmontools
 sys-fs/btrfs-progs
