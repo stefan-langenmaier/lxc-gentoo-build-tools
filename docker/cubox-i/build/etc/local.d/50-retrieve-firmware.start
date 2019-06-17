@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkdir /lib/firmware/imx/sdma -p
 mkdir /lib/firmware/brcm -p
 mkdir /lib/firmware/ti-connectivity -p
