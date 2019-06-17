@@ -13,3 +13,8 @@ net-libs/libmicrohttpd messages
 # required by @selected
 # required by @world (argument)
 net-misc/curl http2
+
+# required by media-tv/kodi-18.2::gentoo[zeroconf]
+# required by @selected
+# required by @world (argument)
+net-dns/avahi dbus
