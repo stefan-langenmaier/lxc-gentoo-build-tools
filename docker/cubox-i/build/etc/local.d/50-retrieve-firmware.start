@@ -1,14 +1,16 @@
 #!/bin/bash
 
+mkdir /lib/firmware/vpu -p
 mkdir /lib/firmware/imx/sdma -p
 mkdir /lib/firmware/brcm -p
 mkdir /lib/firmware/ti-connectivity -p
 
-if [ ! -e "/lib/firmware/vpu_fw_imx6q.bin" ]
+if [ ! -e "/lib/firmware/vpu/vpu_fw_imx6q.bin" ]
 then
 	wget http://www.nxp.com/lgfiles/NMG/MAD/YOCTO/firmware-imx-8.0.bin
 	dd if=firmware-imx-8.0.bin bs=37180 skip=1 | tar xj
-	cp firmware-imx-8.0/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware
+	cp firmware-imx-8.0/firmware/vpu/vpu_fw_imx6q.bin /lib/firmware/vpu/
+	cp firmware-imx-8.0/firmware/sdma/sdma-imx6q.bin /lib/firmware/imx/sdma/
 fi
 
 if [ ! -e "/lib/firmware/imx/sdma/sdma-imx6q.bin" ]
