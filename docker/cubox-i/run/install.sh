@@ -36,3 +36,5 @@ done
 
 mkdir /mnt/full-root
 mkdir /mnt/full-data
+
+echo "Remember to update extlinux.conf"
