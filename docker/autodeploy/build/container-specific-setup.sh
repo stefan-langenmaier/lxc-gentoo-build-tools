@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # necessary packages
-emerge -uDN world -j1
+emerge -uDN --changed-use --with-bdeps=y world -j1
 
 # u-boot
 #git clone https://github.com/u-boot/u-boot /root/u-boot

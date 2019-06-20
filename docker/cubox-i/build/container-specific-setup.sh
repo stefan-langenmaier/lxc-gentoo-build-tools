@@ -1,3 +1,3 @@
 #!/bin/bash
 
-emerge -uDN world -j1
+emerge -uDN --changed-use --with-bdeps=y world -j1

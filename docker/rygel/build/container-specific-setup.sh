@@ -2,6 +2,6 @@
 set -e
 set -x
 
-emerge -uDN world -v -j1
+emerge -uDN --changed-use --with-bdeps=y world -v -j1
 eselect news read
 emerge --depclean
