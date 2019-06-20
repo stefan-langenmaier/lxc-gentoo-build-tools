@@ -28,7 +28,8 @@ do
 	rsync -a /etc/${f} ${NEW_ROOT}/etc/${f}
 done
 
-FILES=".ssh/"
+FILES=".ssh/
+.docker/config.json"
 for f in $FILES
 do
 	rsync -a /root/${f} ${NEW_ROOT}/root/${f}
