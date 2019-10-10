@@ -13,8 +13,6 @@ else
 	rc-update add nginx default
 	rc-update add php-fpm default
 	rc-update add mysql default
-	eselect php set fpm php7.2
-	eselect php set cli php7.2
 
 	#write out current crontab
 	crontab -l > mycron || true
