@@ -13,6 +13,7 @@ docker run -it \
 	-v /mnt/full-data/vols/kodi-config:/root/.kodi:rw \
 	-v /mnt/full-data/vols/tv:/data/tv:ro \
 	-v /mnt/full-data/vols/music:/data/music:ro \
+	-v /mnt/full-data/vols/audiobooks:/data/audiobooks:ro \
 	--name "kodi" \
 	"slangenmaier/kodi:latest" \
 		kodi

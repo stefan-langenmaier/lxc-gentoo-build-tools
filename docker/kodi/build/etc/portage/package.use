@@ -6,3 +6,5 @@ dev-java/icedtea-bin -alsa -cups -webstart
 dev-java/icedtea -alsa -cups -webstart
 
 net-libs/libmicrohttpd messages
+dev-lang/python sqlite
+net-misc/curl http2
