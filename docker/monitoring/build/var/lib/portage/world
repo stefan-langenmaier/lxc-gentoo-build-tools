@@ -5,3 +5,4 @@ app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
 mail-mta/ssmtp
+net-misc/autossh
