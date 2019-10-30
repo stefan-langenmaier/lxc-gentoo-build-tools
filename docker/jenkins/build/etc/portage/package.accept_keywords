@@ -1,39 +1,45 @@
->=dev-util/jenkins-bin-2:lts **
+>=dev-util/jenkins-bin-2:lts **
 
-# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+# required by dev-java/icedtea-bin-3.13.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/java-config-2.2.0-r4 ~arm
-# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+=sys-apps/baselayout-java-0.1.0-r1 ~arm
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
+# required by @selected
+# required by @world (argument)
+=virtual/jdk-1.8.0-r4 ~arm
+# required by dev-java/icedtea-bin-3.13.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
 =app-eselect/eselect-java-0.4.0 ~arm
-# required by dev-java/java-config-2.2.0-r4::gentoo
-# required by dev-java/icedtea-bin-3.9.0-r1::gentoo
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
-=sys-apps/baselayout-java-0.1.0 ~arm
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+=dev-java/icedtea-bin-3.13.0 ~arm
+# required by dev-java/icedtea-bin-3.13.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
-=virtual/jre-1.8.0-r1 ~arm
-# required by virtual/jre-1.8.0-r1::gentoo
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+=virtual/jpeg-compat-62 ~arm
+# required by dev-java/icedtea-bin-3.13.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
-=virtual/jdk-1.8.0-r3 ~arm
-# required by virtual/jdk-1.8.0-r3::gentoo
-# required by virtual/jre-1.8.0-r1::gentoo
-# required by dev-util/jenkins-bin-2.150.1::gentoo
+=dev-java/java-config-2.2.0-r4 ~arm
+# required by dev-util/jenkins-bin-2.190.1::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/icedtea-bin-3.9.0-r1 ~arm
+=virtual/jre-1.8.0-r2 ~arm
