@@ -1,0 +1,5 @@
+app-misc/screen
+app-portage/eix
+app-portage/gentoolkit
+app-metrics/collectd
+dev-util/strace
