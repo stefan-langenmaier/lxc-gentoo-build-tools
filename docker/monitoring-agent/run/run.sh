@@ -12,7 +12,6 @@ docker run \
 	-d \
 	-v /usr/portage:/usr/portage:ro \
 	-v /mnt/full-data/vols/monitoring-agent-config/collectd/collectd.conf:/etc/collectd.conf:rw \
-	-p 9103:9103 \
 	--name "monitoring-agent" \
 	"slangenmaier/monitoring-agent:latest" \
 		/sbin/init
