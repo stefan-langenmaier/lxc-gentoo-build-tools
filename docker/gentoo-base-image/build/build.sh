@@ -19,7 +19,7 @@ docker run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	-v ${PWD}/container-specific-setup.sh:/css.sh:ro \
+	-v /var/lib/jenkins/home/workspace/build-gentoo-base-image/docker/gentoo-base-image/build/container-specific-setup.sh:/css.sh:ro \
 	--name $CNAME \
 	"slangenmaier/gentoo-base-image:latest" \
 		bash /css.sh
