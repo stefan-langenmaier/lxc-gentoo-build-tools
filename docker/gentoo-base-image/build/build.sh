@@ -19,10 +19,9 @@ docker run \
 	-v /usr/portage:/usr/portage:ro \
 	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
-	-v /var/lib/jenkins/home/workspace/build-gentoo-base-image/docker/gentoo-base-image/build/container-specific-setup.sh:/css.sh:ro \
 	--name $CNAME \
 	"slangenmaier/gentoo-base-image:latest" \
-		bash /css.sh
+		bash /container-specific-setup.sh
 
 #to lose the history and flatten the image
 docker export $CNAME | docker import - "slangenmaier/gentoo-base-image:latest"
