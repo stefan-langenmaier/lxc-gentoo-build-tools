@@ -1,3 +1,0 @@
-# temp fix for compilation issues 2019-11-02
-=dev-libs/libassuan-2.5.3
-=app-crypt/gpgme-1.13.0-r1
