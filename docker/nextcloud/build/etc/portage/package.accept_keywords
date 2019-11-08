@@ -23,10 +23,6 @@ app-crypt/certbot-nginx ~arm
 # required by @selected
 # required by @world (argument)
 =dev-python/requests-toolbelt-0.9.1 ~arm
-# required by app-crypt/certbot-nginx-0.39.0::gentoo
-# required by @selected
-# required by @world (argument)
-=app-crypt/acme-0.39.0 ~arm
 # required by app-crypt/certbot-0.39.0::gentoo
 # required by app-crypt/certbot-nginx-0.39.0::gentoo
 # required by @selected
@@ -52,3 +48,8 @@ app-crypt/certbot-nginx ~arm
 # required by @selected
 # required by @world (argument)
 =dev-python/zope-component-4.4.1 ~arm
+# required by app-crypt/certbot-0.40.1::gentoo
+# required by app-crypt/certbot-nginx-0.40.1::gentoo
+# required by @selected
+# required by @world (argument)
+=app-crypt/acme-0.40.1 ~arm
