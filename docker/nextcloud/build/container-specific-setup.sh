@@ -13,6 +13,7 @@ else
 	rc-update add nginx default
 	rc-update add php-fpm default
 	rc-update add mysql default
+	rc-update add redis default
 
 	#write out current crontab
 	crontab -l > mycron || true

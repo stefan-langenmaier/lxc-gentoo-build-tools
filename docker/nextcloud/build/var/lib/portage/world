@@ -1,6 +1,7 @@
 app-crypt/certbot-nginx
 app-misc/screen
 dev-db/mariadb
+dev-db/redis
 dev-php/pecl-apcu
 dev-python/cffi
 mail-mta/ssmtp
