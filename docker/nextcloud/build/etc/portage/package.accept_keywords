@@ -7,6 +7,8 @@ app-crypt/certbot-nginx ~arm
 # required by @world (argument)
 =dev-php/pecl-apcu-5.1.17-r1 **
 
+dev-php/pecl-redis ~arm
+
 # required by app-crypt/certbot-0.39.0::gentoo
 # required by app-crypt/certbot-nginx-0.39.0::gentoo
 # required by @selected
