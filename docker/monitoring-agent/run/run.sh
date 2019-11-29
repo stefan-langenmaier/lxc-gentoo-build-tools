@@ -2,12 +2,16 @@
 set -e
 set -x
 
+ADDED_DEVICES=""
+for d in /dev/sd? ; do ADDED_DEVICES="${ADDED_DEVICES} --device ${d}:${d}:r" ; done
+echo $ADDED_DEVICES
+
 docker run \
 	--tmpfs /run \
 	--rm \
 	--cap-add=SYS_RAWIO \
 	--cap-add=SYS_PTRACE \
-	--device /dev/sda:/dev/sda:r \
+	$ADDED_DEVICES \
 	--network host \
 	-d \
 	-v /usr/portage:/usr/portage:ro \
