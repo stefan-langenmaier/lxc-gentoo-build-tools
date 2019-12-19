@@ -1,6 +1,7 @@
 FROM slangenmaier/gentoo-base-image:latest
 ADD etc/inittab /etc/inittab
 ADD etc/sysctl.conf /etc/sysctl.conf
+RUN rc-update del udev sysinit && rc-update del udev-trigger sysinit && rc-update del loopback boot
 RUN sed -i 's/#rc_provide=.*$/rc_provide="net"/g' /etc/rc.conf 
 
 #RUN true &&\
