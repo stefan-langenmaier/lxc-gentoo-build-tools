@@ -50,7 +50,7 @@ dev-php/pecl-redis ~arm
 # required by app-crypt/certbot-nginx-0.40.1::gentoo
 # required by @selected
 # required by @world (argument)
-=app-crypt/acme-0.40.1 ~arm
+=app-crypt/acme-1.0.0 ~arm
 # required by app-crypt/certbot-0.40.1::gentoo
 # required by app-crypt/certbot-nginx-0.40.1::gentoo
 # required by @selected
