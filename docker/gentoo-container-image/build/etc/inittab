@@ -63,3 +63,6 @@ ca:12345:ctrlaltdel:/sbin/shutdown -r now
 
 # Architecture specific features
 #f0:12345:respawn:/sbin/agetty 9600 ttyFB0 vt100
+
+# shutdown
+pf::powerfail:/sbin/poweroff -dhn
