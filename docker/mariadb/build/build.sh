@@ -35,6 +35,7 @@ else
 fi
 
 docker commit \
+        -c "STOPSIGNAL SIGPWR" \
 	$CNAME \
 	"slangenmaier/mariadb:latest"
 
