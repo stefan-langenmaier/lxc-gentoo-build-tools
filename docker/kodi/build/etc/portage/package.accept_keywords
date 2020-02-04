@@ -1,65 +1,69 @@
-=media-tv/kodi-18.4 **
+=media-tv/kodi-18.5-r1 **
 
-=dev-libs/rapidjson-1.1.0-r1 **
-=dev-libs/libfmt-6.0.0 **
-
-# required by dev-java/icedtea-bin-3.13.0::gentoo
-# required by virtual/jdk-1.8.0-r4::gentoo
 # required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-java/java-config-2.2.0-r4 ~arm
-# required by dev-java/java-config-2.2.0-r4::gentoo
-# required by dev-java/icedtea-bin-3.13.0::gentoo
-# required by virtual/jdk-1.8.0-r4::gentoo
-# required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
-# required by @selected
-# required by @world (argument)
-=sys-apps/baselayout-java-0.1.0-r1 ~arm
-# required by media-tv/kodi-18.4::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-libs/flatbuffers-1.11.0 **
-# required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
 =virtual/jdk-1.8.0-r4 ~arm
-# required by dev-java/icedtea-bin-3.13.0::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/rapidjson-9999 **
 # required by virtual/jdk-1.8.0-r4::gentoo
 # required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
-=virtual/jpeg-compat-62 ~arm
-# required by media-tv/kodi-18.4::gentoo
-# required by @selected
-# required by @world (argument)
-=media-fonts/roboto-2.138 ~arm
-# required by media-tv/kodi-18.4::gentoo
-# required by @selected
-# required by @world (argument)
-=dev-libs/libfstrcmp-0.7 **
-# required by dev-java/icedtea-bin-3.13.0::gentoo
+=dev-java/icedtea-bin-3.14.0 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
 # required by virtual/jdk-1.8.0-r4::gentoo
 # required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
 =app-eselect/eselect-java-0.4.0 ~arm
-# required by media-tv/kodi-18.4::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
 =dev-libs/crossguid-0_pre20150817 ~arm
-# required by virtual/jdk-1.8.0-r4::gentoo
-# required by virtual/jre-1.8.0-r2::gentoo
-# required by media-tv/kodi-18.4::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
-=dev-java/icedtea-bin-3.13.0 ~arm
-# required by media-tv/kodi-18.4::gentoo
+=dev-libs/libfmt-9999 **
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/flatbuffers-1.11.0 **
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=sys-apps/baselayout-java-0.1.0-r1 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=virtual/jpeg-compat-62 ~arm
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-libs/libfstrcmp-0.7 **
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=dev-java/java-config-2.2.0-r4 ~arm
+# required by media-tv/kodi-18.5-r1::gentoo
+# required by @selected
+# required by @world (argument)
+=media-fonts/roboto-2.138 ~arm
+# required by media-tv/kodi-18.5-r1::gentoo
 # required by @selected
 # required by @world (argument)
 =virtual/jre-1.8.0-r2 ~arm
