@@ -35,7 +35,6 @@ else
 fi
 
 docker commit \
-	-c "STOPSIGNAL SIGPWR" \
 	$CNAME \
 	"slangenmaier/nextcloud:latest"
 
