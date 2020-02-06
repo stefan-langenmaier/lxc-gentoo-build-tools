@@ -5,6 +5,7 @@ set -x
 cd /root
 
 emerge -u gentoo-sources
+emerge -uDN @world
 emerge --depclean
 eselect kernel set 1
 cp /kernel-config /usr/src/linux/.config
