@@ -12,7 +12,8 @@ docker run \
 	-p 80:80 \
 	--rm \
 	-d \
-        --name "proxy" \
-        "slangenmaier/nginx:latest" \
+        --stop-signal SIGPWR \
+	--name "proxy" \
+        "slangenmaier/nginx-slim:latest" \
         /sbin/init
 
