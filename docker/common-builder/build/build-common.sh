@@ -15,6 +15,8 @@ start_builder_container
 install_base_system
 
 set +e
+
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} ln -s -f ../../usr/portage/profiles/default/linux/arm/17.0/armv7a /etc/portage/make.profile'
 set -e
 
 create_image
