@@ -40,6 +40,7 @@ then
     	docker run \
                 --cap-add SYS_PTRACE \
                 --tmpfs /run \
+		--stop-signal SIGPWR \
                 -v /usr/portage:/usr/portage:ro \
                 -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
                 -v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
