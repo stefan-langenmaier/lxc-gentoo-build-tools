@@ -1,0 +1,7 @@
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by @container_set (argument)
+=dev-java/icedtea-bin-3.14.0 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by @container_set (argument)
+=virtual/jpeg-compat-62 ~arm
