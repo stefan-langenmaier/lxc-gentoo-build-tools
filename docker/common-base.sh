@@ -68,6 +68,8 @@ docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configro
 
 docker cp $(realpath ../../common-builder/build/etc/inittab) $BNAME:/build/rootfs/etc/inittab
 docker cp $(realpath ../../common-builder/build/etc/sysctl.conf) $BNAME:/build/rootfs/etc/sysctl.conf
+docker cp $(realpath ../../common-builder/build/etc/portage/make.conf) $BNAME:/build/rootfs/etc/portage/make.conf
+docker cp $(realpath ../../common-builder/build/etc/nsswitch.conf) $BNAME:/build/rootfs/etc/nsswitch.conf
 set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "rc_provide=\"net\"" >> ${ROOTFS}/etc/rc.conf'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add cgroups sysinit'
