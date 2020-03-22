@@ -1,1 +1,3 @@
+app-crypt/certbot-nginx
+sys-process/cronie
 www-servers/nginx
