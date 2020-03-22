@@ -1,16 +1,26 @@
 #!/bin/bash
 
-cd "$(dirname "$0")"
+#cd "$(dirname "$0")"
 
 DATE=`date +%Y-%m-%d`
 BINAME="slangenmaier/common-builder:latest"
 
-if [[ -z "$JOB_BASE_NAME" ]]; then
+if [ -z "$JOB_BASE_NAME" ]; then
 	PC_ROOT=$(realpath ../portage-configroot/)
 else
 	PC_ROOT_SUFFIX=$(realpath ../portage-configroot/)
 	PC_ROOT_SUFFIX=${PC_ROOT_SUFFIX#"/var/lib/jenkins/home/workspace/$JOB_BASE_NAME/"}
 	PC_ROOT=/mnt/full-data/vols/jenkins-home/workspace/${JOB_BASE_NAME}/${PC_ROOT_SUFFIX}
+fi
+
+if [ -d "../portage-host" ]; then
+	if [ -z "$JOB_BASE_NAME" ]; then
+		PH_ROOT=$(realpath ../portage-host/)
+	else
+		PH_ROOT_SUFFIX=$(realpath ../portage-host/)
+		PH_ROOT_SUFFIX=${PC_ROOT_SUFFIX#"/var/lib/jenkins/home/workspace/$JOB_BASE_NAME/"}
+		PH_ROOT=/mnt/full-data/vols/jenkins-home/workspace/${JOB_BASE_NAME}/${PC_ROOT_SUFFIX}
+	fi
 fi
 
 function start_builder_container() {
@@ -26,6 +36,7 @@ fi
 
 if [[ $(docker ps -a --filter "name=^/$BNAME$" --format '{{.Names}}') != $BNAME ]]
 then
+        [[ ! -z ${PH_ROOT} ]] && PH_ROOT_LINE="-v ${PH_ROOT}:/etc/portage:rw"
     	docker run \
                 --cap-add SYS_PTRACE \
                 --tmpfs /run \
@@ -33,7 +44,8 @@ then
                 -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
                 -v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
                 -v ${ROOTFS}:/build/rootfs:rw \
-                -v ${PC_ROOT}:/build/portage-configroot:ro \
+                -v ${PC_ROOT}:/build/portage-configroot:rw \
+		${PH_ROOT_LINE} \
                 -v /mnt/full-data/vols/container-profiles:/usr/local/portage/container-profiles:ro \
                  --name $BNAME \
 		-d \
@@ -46,7 +58,7 @@ fi
 }
 
 function install_base_system() {
-docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uDN @system @container_set @world"
+docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uDN @system @container_set @world --autounmask=y"
 docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge --depclean"
 
 docker cp $(realpath ../../gentoo-container-image/build/etc/inittab) $BNAME:/build/rootfs/etc/inittab
