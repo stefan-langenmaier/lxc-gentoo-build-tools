@@ -43,11 +43,11 @@ then
                 -v /usr/portage:/usr/portage:ro \
                 -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
                 -v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
-                -v ${ROOTFS}:/build/rootfs:rw \
-                -v ${PC_ROOT}:/build/portage-configroot:rw \
+		-v ${ROOTFS}:/build/rootfs:rw \
+		-v ${PC_ROOT}:/build/portage-configroot:rw \
 		${PH_ROOT_LINE} \
-                -v /mnt/full-data/vols/container-profiles:/usr/local/portage/container-profiles:ro \
-                 --name $BNAME \
+		-v /mnt/full-data/vols/container-profiles:/usr/local/portage/container-profiles:ro \
+		--name $BNAME \
 		-d \
                 "${BINAME}" \
                         /sbin/init
@@ -58,7 +58,11 @@ fi
 }
 
 function install_base_system() {
+# TODO remove set +e
+# this should cause fails
+set +e
 docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uDN @system @container_set @world --autounmask=y"
+set -e
 docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge --depclean"
 
 docker cp $(realpath ../../gentoo-container-image/build/etc/inittab) $BNAME:/build/rootfs/etc/inittab
