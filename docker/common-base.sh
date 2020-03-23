@@ -31,7 +31,7 @@ NEW_IMAGE_ID=$(docker images --filter=reference="${BINAME}" --format '{{.ID}}')
 
 if [[ $(docker ps -a --filter "name=^/$BNAME$" --format '{{.Names}}') != '' && $NEW_IMAGE_ID != $OLD_IMAGE_ID ]]
 then
-    	docker rm "${BNAME}"
+    	docker rm -f "${BNAME}"
 fi
 
 if [[ $(docker ps -a --filter "name=^/$BNAME$" --format '{{.Names}}') != $BNAME ]]
