@@ -18,8 +18,8 @@ if [ -d "../portage-host" ]; then
 		PH_ROOT=$(realpath ../portage-host/)
 	else
 		PH_ROOT_SUFFIX=$(realpath ../portage-host/)
-		PH_ROOT_SUFFIX=${PC_ROOT_SUFFIX#"/var/lib/jenkins/home/workspace/$JOB_BASE_NAME/"}
-		PH_ROOT=/mnt/full-data/vols/jenkins-home/workspace/${JOB_BASE_NAME}/${PC_ROOT_SUFFIX}
+		PH_ROOT_SUFFIX=${PH_ROOT_SUFFIX#"/var/lib/jenkins/home/workspace/$JOB_BASE_NAME/"}
+		PH_ROOT=/mnt/full-data/vols/jenkins-home/workspace/${JOB_BASE_NAME}/${PH_ROOT_SUFFIX}
 	fi
 fi
 
