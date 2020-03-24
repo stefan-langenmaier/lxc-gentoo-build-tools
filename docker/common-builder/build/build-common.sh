@@ -18,7 +18,8 @@ set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} ln -s -f ../../usr/portage/profiles/default/linux/arm/17.0/armv7a /etc/portage/make.profile'
 
 # the builder will need the build deps also installed
-docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -u --root-deps @system @world"
+docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uD --with-bdeps=y --root-deps @system @world"
+docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -u sys-devel/make"
 
 set -e
 
