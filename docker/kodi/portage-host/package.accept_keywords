@@ -1,0 +1,51 @@
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by @container_set (argument)
+=dev-java/icedtea-bin-3.14.0 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by @container_set (argument)
+=virtual/jpeg-compat-62 ~arm
+
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=media-fonts/roboto-2.138 ~arm
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=virtual/jdk-1.8.0-r4 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=app-eselect/eselect-java-0.4.0 ~arm
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-libs/crossguid-0_pre20150817 ~arm
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-libs/libfstrcmp-0.7 **
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=virtual/jre-1.8.0-r2 ~arm
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-libs/flatbuffers-1.12.0 **
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-libs/rapidjson-1.1.0-r1 **
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-libs/libfmt-6.1.2 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=sys-apps/baselayout-java-0.1.0-r1 ~arm
+# required by dev-java/icedtea-bin-3.14.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by virtual/jre-1.8.0-r2::gentoo
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+=dev-java/java-config-2.2.0-r4 ~arm

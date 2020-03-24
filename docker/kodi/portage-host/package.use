@@ -1,0 +1,6 @@
+# required by media-tv/kodi-18.6::gentoo[-libressl]
+# required by @container_set (argument)
+>=media-video/ffmpeg-4.1.3 openssl
+# required by media-tv/kodi-18.6::gentoo
+# required by @container_set (argument)
+>=net-misc/curl-7.68.0 http2

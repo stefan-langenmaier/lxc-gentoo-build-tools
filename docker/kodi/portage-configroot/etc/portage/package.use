@@ -8,8 +8,3 @@ net-libs/libmicrohttpd messages
 dev-lang/python sqlite
 net-misc/curl http2
 
-# required by media-tv/kodi-18.5-r1::gentoo[-raspberry-pi]
-# required by @selected
-# required by @world (argument)
->=media-libs/mesa-19.2.8 X
-
