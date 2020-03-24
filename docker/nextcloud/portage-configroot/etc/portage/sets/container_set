@@ -1,0 +1,10 @@
+app-crypt/certbot-nginx
+dev-db/mariadb
+dev-db/redis
+dev-php/pecl-apcu
+dev-php/pecl-redis
+dev-python/cffi
+mail-mta/ssmtp
+sys-process/cronie
+www-apps/nextcloud
+www-servers/nginx

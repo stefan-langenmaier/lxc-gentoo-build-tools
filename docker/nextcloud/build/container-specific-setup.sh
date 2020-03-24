@@ -2,8 +2,6 @@
 set -e
 set -x
 
-emerge -uDN --changed-use --with-bdeps=y --binpkg-changed-deps=y world -j4 --load-average 4
-eselect news read
 
 if webapp-config -li | grep nextcloud
 then
@@ -26,4 +24,3 @@ else
 	rm mycron
 	rc-update add cronie default
 fi
-emerge --depclean
