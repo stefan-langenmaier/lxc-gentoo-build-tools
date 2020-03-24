@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 . ../../common-base.sh
 
 BNAME=nginx-builder-instance
-INAME=slangenmaier/nginx-slim
+INAME=slangenmaier/nginx
 ROOTFS=/mnt/full-data/vols/common-builder/nginx/
 
 start_builder_container
