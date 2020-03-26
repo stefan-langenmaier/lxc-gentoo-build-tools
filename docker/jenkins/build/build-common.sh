@@ -15,9 +15,12 @@ start_builder_container
 install_base_system
 
 set +e
+docker exec -e ROOTFS=/build/rootfs -e PORTAGE_CONFIGROOT=/build/portage-configroot $BNAME bash -c 'emerge libltdl -1 -av'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} touch /dev/null'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} eselect java-vm set system 1'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add jenkins default'
 # currently no user is created in the ROOTFS
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd jenkins'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --uid 999 --gid 246 jenkins'
 # totally NOT portable
 # to specify here what the mapped docker file will have as a groupid
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd -g 120 outerdocker'
