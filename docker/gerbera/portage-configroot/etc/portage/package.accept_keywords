@@ -1,2 +1,4 @@
-=net-misc/gerbera-1.4.0 **
-=net-libs/libupnp-1.12.0-r1 ~arm
+=net-misc/gerbera-9999 **
+<=net-libs/libupnp-1.10 ~arm
+
+#=dev-libs/libfmt-6.1.2 ~arm
