@@ -3,3 +3,6 @@ app-metrics/prometheus
 app-metrics/alertmanager
 mail-mta/ssmtp
 net-misc/autossh
+
+# collectd missing deps
+sys-libs/libcap
