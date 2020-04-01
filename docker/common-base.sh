@@ -71,6 +71,9 @@ docker cp $(realpath ../../common-builder/build/etc/sysctl.conf) $BNAME:/build/r
 docker cp $(realpath ../../common-builder/build/etc/nsswitch.conf) $BNAME:/build/rootfs/etc/nsswitch.conf
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'mkdir -p ${ROOTFS}/etc/portage'
 docker cp $(realpath ../../common-builder/build/etc/portage/make.conf) $BNAME:/build/rootfs/etc/portage/make.conf
+
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "en_US.UTF-8 UTF-8" > ${ROOTFS}/etc/locale.gen && chroot ${ROOTFS} locale-gen'
+
 set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "rc_provide=\"net\"" >> ${ROOTFS}/etc/rc.conf'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add cgroups sysinit'
