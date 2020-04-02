@@ -75,7 +75,9 @@ docker cp $(realpath ../../common-builder/build/etc/portage/make.conf) $BNAME:/b
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "en_US.UTF-8 UTF-8" > ${ROOTFS}/etc/locale.gen && chroot ${ROOTFS} locale-gen'
 
 set +e
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "rc_provide=\"net\"" >> ${ROOTFS}/etc/rc.conf'
+# todo also for ttys and rc_sys
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'grep -q "^rc_provide=" ${ROOTFS}/etc/rc.conf && sed -i "s/^rc_provide.*/rc_provide=\"net lo\"/" ${ROOTFS}/etc/rc.conf || echo "rc_provide=\"net lo\"" >> ${ROOTFS}/etc/rc.conf'
+#docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "rc_provide=\"net\"" >> ${ROOTFS}/etc/rc.conf'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add cgroups sysinit'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update del devfs sysinit'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update del dmesg sysinit'
