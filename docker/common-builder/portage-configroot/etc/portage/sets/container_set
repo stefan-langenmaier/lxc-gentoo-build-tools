@@ -1,3 +1,6 @@
 sys-apps/portage
 app-editors/nano
 sys-apps/less
+app-portage/gentoolkit
+app-portage/eix
+app-portage/portage-utils
