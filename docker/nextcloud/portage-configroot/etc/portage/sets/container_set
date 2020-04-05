@@ -6,5 +6,6 @@ dev-php/pecl-redis
 dev-python/cffi
 mail-mta/ssmtp
 sys-process/cronie
-www-apps/nextcloud
 www-servers/nginx
+# remaining nextcloud deps
+virtual/httpd-php

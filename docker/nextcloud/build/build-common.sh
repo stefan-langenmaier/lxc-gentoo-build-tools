@@ -13,15 +13,19 @@ ROOTFS=/mnt/full-data/vols/common-builder/nextcloud/
 start_builder_container
 
 docker exec $BNAME bash -c 'emerge -uDN app-admin/webapp-config app-eselect/eselect-php'
-#docker exec $BNAME bash -c 'emerge --nodeps -u nextcloud'
+docker exec $BNAME bash -c 'emerge --nodeps -u nextcloud'
 
 install_base_system
 
 set +e
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'mkdir -p ${ROOTFS}/etc/vhosts'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /etc/vhosts/webapp-config ${ROOTFS}/etc/vhosts/webapp-config'
+docker exec $BNAME bash -c 'mkdir -p /build/rootfs/usr/share/webapps ; ln -sf /usr/share/webapps/nextcloud /build/rootfs/usr/share/webapps/nextcloud'
 docker exec $BNAME bash -c 'groupadd --system --gid 245 nginx'
 docker exec $BNAME bash -c 'useradd --system -s /sbin/nologin -d /var/lib/nginx --uid 999 --gid 245 nginx'
 
-#docker exec -e ROOT=/build/rootfs -e PORTAGE_CONFIGROOT=/build/portage-configroot $BNAME bash -c 'emerge -uDN --onlydeps nextcloud'
+# should not install any deps
+docker exec -e ROOT=/build/rootfs -e PORTAGE_CONFIGROOT=/build/portage-configroot $BNAME bash -c 'emerge -uDN --onlydeps nextcloud'
 docker cp container-specific-setup.sh $BNAME:/
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'bash /container-specific-setup.sh'
 
