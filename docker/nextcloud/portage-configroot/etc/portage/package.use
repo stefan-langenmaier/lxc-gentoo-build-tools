@@ -1,4 +1,4 @@
-www-apps/nextcloud mysql sqlite imagemagick vhosts
+www-apps/nextcloud mysql sqlite vhosts
 app-eselect/eselect-php fpm
-dev-lang/php mysql sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader truetype intl
+dev-lang/php exif mysql sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader truetype intl
 #dev-db/mariadb profiling
