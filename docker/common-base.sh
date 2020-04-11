@@ -59,10 +59,11 @@ fi
 }
 
 function install_base_system() {
+SYSROOT=${SYSROOT:-/}
 # TODO remove set +e
 # this should cause fails
 set +e
-docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uDN @system @container_set @world --autounmask=y"
+docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ -e SYSROOT=$SYSROOT $BNAME bash -c "emerge -uDN @system @container_set @world --autounmask=y"
 set -e
 docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge --depclean"
 

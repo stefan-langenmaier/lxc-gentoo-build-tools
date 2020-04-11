@@ -1,6 +1,8 @@
-sys-apps/portage
 app-editors/nano
-sys-apps/less
-app-portage/gentoolkit
 app-portage/eix
+app-portage/gentoolkit
 app-portage/portage-utils
+dev-vcs/git
+sys-apps/less
+sys-apps/portage
+sys-devel/make
