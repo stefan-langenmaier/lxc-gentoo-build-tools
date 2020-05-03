@@ -1,1 +1,2 @@
 >=dev-lang/php-7.4
+>=virtual/httpd-php-7.4
