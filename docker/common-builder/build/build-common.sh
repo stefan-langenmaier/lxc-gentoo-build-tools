@@ -18,9 +18,9 @@ install_base_system
 
 set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} ln -s -f ../../usr/portage/profiles/default/linux/arm/17.0/armv7a /etc/portage/make.profile'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} mkdir -p /etc/portage/repos.conf'
 
-# the builder will need the build deps also installed
-#docker exec -e ROOT=/build/rootfs/ -e PORTAGE_CONFIGROOT=/build/portage-configroot/ $BNAME bash -c "emerge -uD --with-bdeps=y --root-deps @system @world"
+docker cp gentoo.conf $BNAME:/build/rootfs/etc/portage/repos.conf/gentoo.conf
 set -e
 
 create_image
