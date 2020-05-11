@@ -15,8 +15,8 @@ start_builder_container
 install_base_system
 
 set +e
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} eselect kernel set 1'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /build/portage-configroot/kernel-config /usr/src/linux/.config'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'eselect kernel set 1'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /build/portage-configroot/kernel-config ${ROOTFS}/usr/src/linux/.config'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS}/usr/src/linux ; make oldconfig ; make -j5 ; make dtbs'
 
 #cp /usr/src/linux/arch/arm/boot/zImage /autodeploy-exchange/zImage
