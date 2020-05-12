@@ -1,2 +1,3 @@
-sys-kernel/gentoo-sources
 dev-util/yacc
+sys-apps/net-tools
+sys-kernel/gentoo-sources
