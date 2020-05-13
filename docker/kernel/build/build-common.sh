@@ -19,10 +19,13 @@ docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'ROOT=${ROOTFS} eselect kerne
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /build/portage-configroot/kernel-config ${ROOTFS}/usr/src/linux/.config'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS}/usr/src/linux ; make oldconfig ; make -j5 ; make dtbs'
 
-#cp /usr/src/linux/arch/arm/boot/zImage /autodeploy-exchange/zImage
-#cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i.dtb /autodeploy-exchange/imx6q-cubox-i.dtb
-#cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-emmc-som-v15.dtb /autodeploy-exchange/imx6q-cubox-i-emmc-som-v15.dtb
-#cp /usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-som-v15.dtb /autodeploy-exchange/imx6q-cubox-i-som-v15.dtb
+# hobo transfer
+docker container create --name transfer-container -v autodeploy-exchange:/autodeploy-exchange slangenmaier/nothing
+docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/zImage - | docker cp - transfer-container:/autodeploy-exchange/
+docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i.dtb - | docker cp - transfer-container:/autodeploy-exchange/
+docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-emmc-som-v15.dtb - | docker cp - transfer-container:/autodeploy-exchange/
+docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-som-v15.dtb - | docker cp - transfer-container:/autodeploy-exchange/
+docker container rm transfer-container
 
 set -e
 
