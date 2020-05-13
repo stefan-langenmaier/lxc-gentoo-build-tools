@@ -6,7 +6,9 @@ app-portage/portage-utils
 dev-util/yacc
 dev-vcs/git
 sys-apps/less
+sys-apps/net-tools
 sys-apps/portage
 sys-devel/bison
 sys-devel/make
 sys-devel/bc
+
