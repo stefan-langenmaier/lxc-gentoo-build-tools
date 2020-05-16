@@ -1,2 +1,3 @@
 dev-util/jenkins-bin
 dev-vcs/git
+dev-libs/libltdl
