@@ -27,6 +27,8 @@ docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --u
 # to specify here what the mapped docker file will have as a groupid
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd -g 120 outerdocker'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} usermod  -a -G 120 jenkins'
+
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} chown jenkins:jenkins /home/jenkins -R'
 set -e
 
 create_image
