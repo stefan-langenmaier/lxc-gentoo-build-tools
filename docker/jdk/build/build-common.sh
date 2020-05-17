@@ -15,6 +15,7 @@ start_builder_container
 install_base_system
 
 set +e
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} update-ca-certificates'
 set -e
 
 create_image
