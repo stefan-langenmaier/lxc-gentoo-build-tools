@@ -16,18 +16,18 @@ NEW_ROOT=/mnt/full-root/vols/root-${NOW}
 BACKUP_BOOT=/boot/backup/$NOW
 
 
-mkdir -p $BACKUP_BOOT
-cp -R /boot/zImage /boot/extlinux /boot/dtbs $BACKUP_BOOT
-wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/zImage -O /boot/zImage
-wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i.dtb -O /boot/dtbs/imx6q-cubox-i.dtb
-wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i-emmc-som-v15.dtb -O /boot/dtbs/imx6q-cubox-i-emmc-som-v15.dtb
-wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i-som-v15.dtb -O /boot/dtbs/imx6q-cubox-i-som-v15.dtb
+#mkdir -p $BACKUP_BOOT
+#cp -R /boot/zImage /boot/extlinux /boot/dtbs $BACKUP_BOOT
+#wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/zImage -O /boot/zImage
+#wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i.dtb -O /boot/dtbs/imx6q-cubox-i.dtb
+#wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i-emmc-som-v15.dtb -O /boot/dtbs/imx6q-cubox-i-emmc-som-v15.dtb
+#wget https://github.com/stefan-langenmaier/cubox-i-autodeploy-image/releases/download/v0.32/imx6q-cubox-i-som-v15.dtb -O /boot/dtbs/imx6q-cubox-i-som-v15.dtb
 
-exit
+#exit
 
 btrfs sub create ${NEW_ROOT}
 docker rm cubox-i || true
-docker create --name cubox-i slangenmaier/cubox-i:latest
+docker create --name cubox-i slangenmaier/cubox-i:latest /bin/true
 docker export cubox-i | tar --extract --verbose --directory ${NEW_ROOT}
 
 rm ${NEW_ROOT}/.dockerenv
@@ -48,6 +48,8 @@ do
 	rsync -a /etc/${f} ${NEW_ROOT}/etc/${f}
 done
 
+mkdir -p ${NEW_ROOT}/root/.ssh
+mkdir -p ${NEW_ROOT}/root/.docker
 FILES=".ssh/
 .docker/config.json"
 for f in $FILES
@@ -55,8 +57,8 @@ do
 	rsync -a /root/${f} ${NEW_ROOT}/root/${f}
 done
 
-mkdir ${NEW_ROOT}/mnt/full-root
-mkdir ${NEW_ROOT}/mnt/full-data
+mkdir -p ${NEW_ROOT}/mnt/full-root
+mkdir -p ${NEW_ROOT}/mnt/full-data
 
 echo "Remember to update extlinux.conf"
 echo "Remember to activate subvol as default"
