@@ -51,6 +51,7 @@ done
 mkdir -p ${NEW_ROOT}/root/.ssh
 mkdir -p ${NEW_ROOT}/root/.docker
 FILES=".ssh/
+.gitconfig
 .docker/config.json"
 for f in $FILES
 do
