@@ -1,0 +1,5 @@
+app-arch/cpio
+dev-vcs/git
+net-misc/openssh
+sys-fs/btrfs-progs
+sys-block/parted
