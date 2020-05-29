@@ -10,9 +10,12 @@ then
 	rm -rf $ROOTFS/root/cubox-i-autodeploy-image
 fi
 
-git clone "https://github.com/stefan-langenmaier/cubox-i-autodeploy-image.git"
+TOKEN=$1
+#git clone "git@github.com:stefan-langenmaier/cubox-i-autodeploy-image.git"
+git clone "https://$TOKEN@github.com/stefan-langenmaier/cubox-i-autodeploy-image/"
 
 cd $ROOTFS/root/cubox-i-autodeploy-image
+#git remote set-url origin git@github.com:stefan-langenmaier/cubox-i-autodeploy-image.git
 
 cp /etc/host.conf ${ROOTFS}/etc
 cp /etc/nsswitch.conf ${ROOTFS}/etc
@@ -25,6 +28,7 @@ mkdir -p $ROOTFS/dev/
 if ! mountpoint -q ${ROOTFS}/dev
 then
 	mount --rbind /dev ${ROOTFS}/dev
+	mknod ${ROOTFS}/dev/loop0 b 7 0 || echo "already exists"
 fi
 
 if ! mountpoint -q ${ROOTFS}/proc

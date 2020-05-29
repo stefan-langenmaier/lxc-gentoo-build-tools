@@ -13,12 +13,15 @@ ROOTFS=/mnt/full-data/vols/common-builder/autodeploy/
 # additional permissions to dynamically mount directories
 CONTAINER_MOUNT=yes
 
+# token for upload
+TOKEN=$1
+
 start_builder_container
 
 install_base_system
 
 set +e
-docker exec -e ROOTFS=/build/rootfs $BNAME /bin/bash /build/portage-configroot/prepare-script.sh
+docker exec -e ROOTFS=/build/rootfs $BNAME /bin/bash /build/portage-configroot/prepare-script.sh $TOKEN
 
 # hobo transfer
 docker container create --name transfer-container -v autodeploy-exchange:/autodeploy-exchange slangenmaier/nothing
@@ -28,10 +31,12 @@ docker cp transfer-container:/autodeploy-exchange/zImage - | docker cp - autodep
 docker cp transfer-container:/autodeploy-exchange/imx6q-cubox-i.dtb - | docker cp - autodeploy-builder-instance:/build/rootfs/root/cubox-i-autodeploy-image/kernel-bin/
 docker cp transfer-container:/autodeploy-exchange/imx6q-cubox-i-emmc-som-v15.dtb - | docker cp - autodeploy-builder-instance:/build/rootfs/root/cubox-i-autodeploy-image/kernel-bin/
 docker cp transfer-container:/autodeploy-exchange/imx6q-cubox-i-som-v15.dtb - | docker cp - autodeploy-builder-instance:/build/rootfs/root/cubox-i-autodeploy-image/kernel-bin/
+docker cp transfer-container:/autodeploy-exchange/cubox-i.tar.xz - | docker cp - autodeploy-builder-instance:/build/rootfs/root/cubox-i-autodeploy-image/rootfs-bin/
 docker container rm transfer-container
 
+
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c "cp /build/portage-configroot/build-image.sh /build/rootfs/"
-docker exec -e ROOTFS=/build/rootfs $BNAME chroot /build/rootfs /bin/bash /build-image.sh
+docker exec -e ROOTFS=/build/rootfs $BNAME chroot /build/rootfs /bin/bash /build-image.sh $TOKEN
 set -e
 
 #create_image
