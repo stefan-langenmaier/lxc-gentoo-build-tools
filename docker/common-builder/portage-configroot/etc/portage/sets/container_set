@@ -5,6 +5,7 @@ app-portage/gentoolkit
 app-portage/portage-utils
 dev-util/yacc
 dev-vcs/git
+net-misc/openssh
 sys-apps/less
 sys-apps/net-tools
 sys-apps/portage
