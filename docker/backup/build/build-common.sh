@@ -12,9 +12,6 @@ ROOTFS=/mnt/full-data/vols/common-builder/backup/
 
 start_builder_container
 
-# workaround snapper
-docker exec $BNAME emerge -u dev-libs/libxslt
-
 install_base_system
 
 set +e
