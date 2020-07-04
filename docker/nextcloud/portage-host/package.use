@@ -1,3 +1,4 @@
 www-apps/nextcloud mysql sqlite imagemagick vhosts
 app-eselect/eselect-php fpm
 dev-lang/php mysql sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader truetype intl
+media-gfx/imagemagick -openmp
