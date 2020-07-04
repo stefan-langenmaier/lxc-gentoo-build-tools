@@ -2,7 +2,7 @@
 set -e
 set -x
 
-NC_VERSION=17.0.6
+NC_VERSION=17.0.7
 INSTALL_PATH=$(ROOT=$ROOTFS webapp-config -li nextcloud $NC_VERSION)
 # if the correct version is installed we can skip the installation
 if [[ -z "$INSTALL_PATH" ]]
