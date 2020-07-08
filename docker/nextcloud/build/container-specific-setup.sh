@@ -23,6 +23,7 @@ chroot $ROOTFS rc-update add php-fpm default
 chroot $ROOTFS rc-update add mysql default
 chroot $ROOTFS rc-update add redis default
 chroot $ROOTFS rc-update add cronie default
+chroot $ROOTFS rc-update add syslog-ng default
 
 #echo new cron into cron file
 chroot $ROOTFS bash -c 'echo "PATH=/usr/sbin" > mycron'
