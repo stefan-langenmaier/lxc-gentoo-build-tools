@@ -5,6 +5,8 @@
 DATE=`date +%Y-%m-%d`
 BINAME="slangenmaier/common-builder:latest"
 
+IELF=$(realpath ../../image-exclude-list)
+
 if [ -z "$JOB_BASE_NAME" ]; then
 	PC_ROOT=$(realpath ../portage-configroot/)
 else
@@ -46,6 +48,7 @@ then
                 -v /usr/portage:/usr/portage:ro \
                 -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
                 -v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
+                -v ${IELF}:/image-exclude-list:ro \
 		-v ${ROOTFS}:/build/rootfs:rw \
 		-v ${PC_ROOT}:/build/portage-configroot:rw \
 		${PH_ROOT_LINE} \
@@ -94,7 +97,7 @@ set -e
 }
 
 function create_image() {
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS} ; tar -c .' | docker import - ${INAME}
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS} ; tar --exclude-from=/image-exclude-list -c .' | docker import - ${INAME}
 docker tag "${INAME}:latest" "${INAME}:${DATE}"
 }
 
