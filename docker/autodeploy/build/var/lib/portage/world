@@ -1,9 +1,0 @@
-app-arch/cpio
-app-arch/lzop
-app-misc/screen
-app-portage/eix
-app-portage/gentoolkit
-dev-vcs/git
-sys-block/parted
-sys-devel/bc
-sys-fs/btrfs-progs
