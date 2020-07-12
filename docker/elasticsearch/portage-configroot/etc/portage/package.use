@@ -1,0 +1,2 @@
+app-misc/elasticsearch -x-pack
+dev-java/openjdk-bin gentoo-vm

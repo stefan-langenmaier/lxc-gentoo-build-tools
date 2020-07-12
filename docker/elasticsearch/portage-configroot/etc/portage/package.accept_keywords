@@ -1,0 +1,31 @@
+
+=app-misc/elasticsearch-6.8.8 **
+virtual/jdk ~arm
+virtual/jre ~arm
+dev-java/openjdk-bin ~arm
+
+# required by dev-java/icedtea-bin-3.16.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by dev-java/gradle-bin-6.3::gentoo
+# required by @container_set (argument)
+=sys-apps/baselayout-java-0.1.0-r1 ~arm
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by dev-java/gradle-bin-6.3::gentoo
+# required by @container_set (argument)
+=dev-java/icedtea-bin-3.16.0 ~arm
+# required by dev-java/icedtea-bin-3.16.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by dev-java/gradle-bin-6.3::gentoo
+# required by @container_set (argument)
+=virtual/jpeg-compat-62 ~arm
+# required by dev-java/icedtea-bin-3.16.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by dev-java/gradle-bin-6.3::gentoo
+# required by @container_set (argument)
+=dev-java/java-config-2.2.0-r4 ~arm
+# required by dev-java/icedtea-bin-3.16.0::gentoo
+# required by virtual/jdk-1.8.0-r4::gentoo
+# required by dev-java/gradle-bin-6.3::gentoo
+# required by @container_set (argument)
+=app-eselect/eselect-java-0.4.0 ~arm
+
