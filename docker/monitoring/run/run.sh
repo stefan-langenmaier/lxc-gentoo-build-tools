@@ -6,9 +6,6 @@ docker run \
 	--rm \
 	-d \
 	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /mnt/full-data/vols/monitoring-config/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:rw \
 	-v /mnt/full-data/vols/monitoring-config/prometheus/alerts.yml:/etc/prometheus/alerts.yml:rw \
 	-v /mnt/full-data/vols/monitoring-config/alertmanager/config.yml:/etc/alertmanager/config.yml:rw \

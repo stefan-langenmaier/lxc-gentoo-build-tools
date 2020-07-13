@@ -14,7 +14,6 @@ docker run \
 	$ADDED_DEVICES \
 	--network host \
 	-d \
-	-v /usr/portage:/usr/portage:ro \
 	-v /mnt/full-data/vols/monitoring-agent-config/collectd/collectd.conf:/etc/collectd.conf:rw \
 	--name "monitoring-agent" \
 	"slangenmaier/monitoring-agent:latest" \

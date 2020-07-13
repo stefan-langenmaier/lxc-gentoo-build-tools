@@ -7,8 +7,6 @@ docker run \
 	--privileged \
 	-d \
 	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
 	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /mnt/full-data/vols/tv/Neu:/var/lib/transmission/downloads:rw \
 	-v /mnt/full-data/vols/transmission-config:/var/lib/transmission/config:rw \

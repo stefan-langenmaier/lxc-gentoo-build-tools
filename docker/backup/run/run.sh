@@ -7,9 +7,6 @@ docker run \
 	-d \
 	--privileged \
 	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-	-v /usr/portage/distfiles:/usr/portage/distfiles:rw \
-	-v /mnt/full-data/vols/cuboxi-packages:/usr/portage/packages:rw \
 	-v /mnt/full-data/vols/backup-config/snapper-configs:/etc/snapper/configs:rw \
 	-v /mnt/full-data/vols/backup-config/snapper.conf:/etc/conf.d/snapper:rw \
 	-v /mnt/full-data/vols/backup-config/backup-up-log.de.sh:/etc/cron.daily/backup-up-log.de.sh:rw \

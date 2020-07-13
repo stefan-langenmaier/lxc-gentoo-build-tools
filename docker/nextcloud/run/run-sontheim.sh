@@ -1,7 +1,7 @@
+#!/bin/bash
+
 docker run \
 	--tmpfs /run \
-	-v /usr/portage:/usr/portage:ro \
-        -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
         -v /mnt/full-data/vols/nextcloud-config/letsencrypt:/etc/letsencrypt:rw \
         -v /mnt/full-data/vols/nextcloud-data:/data/nextcloud:rw \
         -v /mnt/full-data/vols/nextcloud-config/nextcloud/config.php:/var/www/localhost/htdocs/nextcloud/config/config.php:rw \
