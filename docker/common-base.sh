@@ -31,6 +31,8 @@ OLD_IMAGE_ID=$(docker images --filter=reference="${OLD_IMAGE}" --format '{{.ID}}
 
 NEW_IMAGE_ID=$(docker images --filter=reference="${BINAME}" --format '{{.ID}}')
 
+[[ ! -z ${RUNTIME} ]] && IELF=$(realpath ../../empty-exclude-list)
+
 if [[ $(docker ps -a --filter "name=^/$BNAME$" --format '{{.Names}}') != '' && $NEW_IMAGE_ID != $OLD_IMAGE_ID ]]
 then
     	docker rm -f "${BNAME}"
@@ -48,7 +50,6 @@ then
                 -v /usr/portage:/usr/portage:ro \
                 -v /usr/portage/distfiles:/usr/portage/distfiles:rw \
                 -v /mnt/full-data/vols/cuboxi-packages/:/usr/portage/packages:rw \
-                -v ${IELF}:/image-exclude-list:ro \
 		-v ${ROOTFS}:/build/rootfs:rw \
 		-v ${PC_ROOT}:/build/portage-configroot:rw \
 		${PH_ROOT_LINE} \
@@ -60,6 +61,8 @@ then
 else
     	docker start $BNAME
 fi
+
+docker cp ${IELF} $BNAME:/image-exclude-list
 
 }
 

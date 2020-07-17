@@ -11,6 +11,7 @@ INAME=slangenmaier/common-builder
 ROOTFS=/mnt/full-data/vols/common-builder/common-builder/
 # to have the bdeps also installed
 SYSROOT=/build/rootfs
+RUNTIME=full
 
 start_builder_container
 

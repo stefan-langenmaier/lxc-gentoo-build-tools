@@ -11,6 +11,7 @@ INAME=slangenmaier/cubox-i
 ROOTFS=/mnt/full-data/vols/common-builder/cubox-i/
 # to have the bdeps also installed
 SYSROOT=/build/rootfs
+RUNTIME=full
 
 start_builder_container
 
