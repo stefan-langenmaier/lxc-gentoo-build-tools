@@ -38,6 +38,8 @@ inittab
 shadow
 conf.d/hostname
 conf.d/net
+conf.d/dmcrypt
+keys/external-usb-disks.key
 docker/
 init.d/net.eth0
 local.d/
@@ -45,7 +47,7 @@ runlevels/
 ssh/"
 for f in $FILES
 do
-	rsync -a /etc/${f} ${NEW_ROOT}/etc/${f}
+	rsync -a /etc/${f} ${NEW_ROOT}/etc/${f} || echo "ERROR: ${f} not copied"
 done
 
 mkdir -p ${NEW_ROOT}/root/.ssh
@@ -55,7 +57,7 @@ FILES=".ssh/
 .docker/config.json"
 for f in $FILES
 do
-	rsync -a /root/${f} ${NEW_ROOT}/root/${f}
+	rsync -a /root/${f} ${NEW_ROOT}/root/${f} || echo "ERROR: ${f} not copied"
 done
 
 mkdir -p ${NEW_ROOT}/mnt/full-root
