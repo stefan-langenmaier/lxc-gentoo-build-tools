@@ -10,8 +10,7 @@ docker run \
         -v /mnt/full-data/vols/nextcloud-config/php/fpm-php7.3/php.ini:/etc/php/fpm-php7.3/php.ini:ro \
         -v /mnt/full-data/vols/nextcloud-config/mysql/my.cnf:/etc/mysql/my.cnf:rw \
         -v /mnt/full-data/vols/nextcloud-db:/var/lib/mysql:rw \
-	-p 443:443 \
-	-p 80:80 \
+	-p 4443:443 \
 	--rm \
 	-d \
         --name "nextcloud" \
