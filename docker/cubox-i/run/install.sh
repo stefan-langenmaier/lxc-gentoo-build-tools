@@ -60,6 +60,13 @@ do
 	rsync -a /root/${f} ${NEW_ROOT}/root/${f} || echo "ERROR: ${f} not copied"
 done
 
+mkdir -p ${NEW_ROOT}/home
+FILES="monitoring/"
+for f in $FILES
+do
+	rsync -a /home/${f} ${NEW_ROOT}/home/${f} || echo "ERROR: ${f} not copied"
+done
+
 mkdir -p ${NEW_ROOT}/mnt/full-root
 mkdir -p ${NEW_ROOT}/mnt/full-data
 
