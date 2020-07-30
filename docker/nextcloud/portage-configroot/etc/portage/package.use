@@ -3,3 +3,4 @@ app-eselect/eselect-php fpm
 dev-lang/php exif mysql sqlite zip pcntl pdo curl fpm xmlwriter gd xmlreader truetype intl
 #dev-db/mariadb profiling
 media-gfx/imagemagick -openmp
+sys-process/cronie -anacron
