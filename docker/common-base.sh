@@ -45,6 +45,7 @@ then
     	docker run \
 		${CONTAINER_MOUNT_LINE} \
                 --cap-add SYS_PTRACE \
+                --cap-add SYS_TIME \
                 --tmpfs /run \
 		--stop-signal SIGPWR \
                 -v /usr/portage:/usr/portage:ro \
