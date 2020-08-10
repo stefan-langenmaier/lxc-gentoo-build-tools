@@ -12,7 +12,7 @@ ROOTFS=/mnt/full-data/vols/common-builder/nextcloud/
 
 start_builder_container
 
-docker exec $BNAME bash -c 'emerge -uDN app-admin/webapp-config app-eselect/eselect-php'
+docker exec $BNAME bash -c 'emerge -uDN app-admin/webapp-config app-eselect/eselect-php dev-libs/jsoncpp'
 docker exec $BNAME bash -c 'emerge --nodeps -u nextcloud'
 
 set +e
