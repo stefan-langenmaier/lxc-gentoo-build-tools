@@ -42,6 +42,8 @@ if [[ $(docker ps -a --filter "name=^/$BNAME$" --format '{{.Names}}') != $BNAME 
 then
         [[ ! -z ${PH_ROOT} ]] && PH_ROOT_LINE="-v ${PH_ROOT}:/etc/portage:rw"
         [[ ! -z ${CONTAINER_MOUNT} ]] && CONTAINER_MOUNT_LINE="--privileged"
+        # temporary fix to build all images privileged
+	CONTAINER_MOUNT_LINE="--privileged"
     	docker run \
 		${CONTAINER_MOUNT_LINE} \
                 --cap-add SYS_PTRACE \
