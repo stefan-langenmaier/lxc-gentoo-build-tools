@@ -24,6 +24,9 @@ start_builder_container
 # workaround lvm2
 #docker exec $BNAME bash -c 'emerge -uDN dev-libs/libaio virtual/libudev'
 
+#workaround ddclient acct
+docker exec $BNAME bash -c 'emerge -uDN acct-group/ddclient acct-user/ddclient'
+
 #docker exec -it $BNAME bash
 
 install_base_system
