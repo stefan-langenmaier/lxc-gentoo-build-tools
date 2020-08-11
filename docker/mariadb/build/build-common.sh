@@ -12,9 +12,6 @@ ROOTFS=/mnt/full-data/vols/common-builder/mariadb/
 
 start_builder_container
 
-# workaround
-docker exec $BNAME bash -c 'emerge -uDN dev-libs/jsoncpp'
-
 install_base_system
 
 set +e

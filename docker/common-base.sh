@@ -87,6 +87,14 @@ docker cp $(realpath ../../common-builder/build/etc/portage/make.conf) $BNAME:/b
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "en_US.UTF-8 UTF-8" > ${ROOTFS}/etc/locale.gen && chroot ${ROOTFS} locale-gen'
 
 set +e
+# workaround create cron
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'groupadd --system --gid 16 cron'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'useradd --system -s /sbin/nologin -d /var/spool/cron --uid 16 --gid 16 cron'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd --system --gid 16 cron'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --system -s /sbin/nologin -d /var/spool/cron --uid 16 --gid 16 cron'
+set +e
+
+set +e
 # todo also for ttys and rc_sys
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'grep -q "^rc_provide=" ${ROOTFS}/etc/rc.conf && sed -i "s/^rc_provide.*/rc_provide=\"net net.lo lo\"/" ${ROOTFS}/etc/rc.conf || echo "rc_provide=\"net net.lo lo\"" >> ${ROOTFS}/etc/rc.conf'
 #docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "rc_provide=\"net\"" >> ${ROOTFS}/etc/rc.conf'

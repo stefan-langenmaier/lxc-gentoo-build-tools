@@ -24,10 +24,6 @@ start_builder_container
 # workaround lvm2
 #docker exec $BNAME bash -c 'emerge -uDN dev-libs/libaio virtual/libudev'
 
-# workaround create cron
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd --system --gid 16 cron'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --system -s /sbin/nologin -d /var/spool/cron --uid 16 --gid 16 cron'
-
 #workaround ddclient acct
 docker exec $BNAME bash -c 'emerge -uDN acct-group/ddclient acct-user/ddclient'
 

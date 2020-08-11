@@ -9,6 +9,7 @@ cd "$(dirname "$0")"
 BNAME=jenkins-builder-instance
 INAME=slangenmaier/jenkins
 ROOTFS=/mnt/full-data/vols/common-builder/jenkins/
+CONTAINER_MOUNT=yes
 
 start_builder_container
 
