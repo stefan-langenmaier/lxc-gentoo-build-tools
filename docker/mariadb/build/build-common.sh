@@ -12,6 +12,11 @@ ROOTFS=/mnt/full-data/vols/common-builder/mariadb/
 
 start_builder_container
 
+set +e
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'groupadd --system --gid 60 mysql'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'useradd --system -d /var/lib/mysql/ -s /sbin/nologin --uid 60 --gid 60 mysql'
+set -e
+
 install_base_system
 
 set +e
