@@ -1,3 +1,4 @@
+dev-java/openjdk-bin
+dev-libs/libltdl
 dev-util/jenkins-bin
 dev-vcs/git
-dev-libs/libltdl
