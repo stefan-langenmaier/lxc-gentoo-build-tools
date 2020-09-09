@@ -14,7 +14,7 @@ start_builder_container
 
 install_base_system
 
-set +e
+#set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'ROOT=${ROOTFS} eselect kernel set 1'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /build/portage-configroot/kernel-config ${ROOTFS}/usr/src/linux/.config'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS}/usr/src/linux ; make oldconfig ; make -j5 ; make dtbs'
@@ -27,7 +27,7 @@ docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/dts/
 docker cp kernel-builder-instance:/build/rootfs/usr/src/linux/arch/arm/boot/dts/imx6q-cubox-i-som-v15.dtb - | docker cp - transfer-container:/autodeploy-exchange/
 docker container rm transfer-container
 
-set -e
+#set -e
 
 #create_image
 
