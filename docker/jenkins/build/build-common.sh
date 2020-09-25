@@ -23,7 +23,8 @@ docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} touch /dev/
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} eselect java-vm set system 1'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add jenkins default'
 # currently no user is created in the ROOTFS
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --uid 999 --gid 246 jenkins'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd -g 246 jenkins'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd --uid 999 --gid 246 -d /var/lib/jenkins jenkins'
 # totally NOT portable
 # to specify here what the mapped docker file will have as a groupid
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd -g 120 outerdocker'
