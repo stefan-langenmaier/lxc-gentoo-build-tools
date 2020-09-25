@@ -1,20 +1,14 @@
 app-emulation/docker ~arm
-=sys-apps/kexec-tools-2.0.20-r1 **
+net-analyzer/iftop ~arm
 
-# required by app-emulation/docker-19.03.8::gentoo
-# required by @container_set (argument)
-=dev-go/go-md2man-2.0.0 ~arm
-# required by app-emulation/docker-19.03.8::gentoo
-# required by @container_set (argument)
-=app-emulation/docker-proxy-0.8.0_p20191011 ~arm
-# required by app-emulation/docker-19.03.8::gentoo
-# required by @container_set (argument)
-=app-emulation/runc-1.0.0_rc10 ~arm
-# required by app-emulation/docker-19.03.8::gentoo[container-init]
-# required by @container_set (argument)
-=sys-process/tini-0.18.0 ~arm
-# required by app-emulation/docker-19.03.8::gentoo
-# required by @container_set (argument)
-=app-emulation/containerd-1.2.13 ~arm
-# required by @container_set (argument)
-=net-analyzer/iftop-1.0_pre4-r4 ~arm
+# required by app-emulation/docker-19.03.13-r2::gentoo
+# required by @container_set
+# required by @selected
+# required by @world (argument)
+=app-emulation/docker-proxy-0.8.0_p20200617 ~arm
+# required by app-emulation/docker-19.03.13-r2::gentoo
+# required by @container_set
+# required by @selected
+# required by @world (argument)
+=app-emulation/containerd-1.3.7 ~arm
+
