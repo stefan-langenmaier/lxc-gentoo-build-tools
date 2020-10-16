@@ -12,4 +12,4 @@ sys-apps/portage
 sys-devel/bison
 sys-devel/make
 sys-devel/bc
-
+sys-fs/btrfs-progs
