@@ -1,10 +1,19 @@
 >=dev-util/jenkins-bin-2:lts **
 dev-java/openjdk-bin ~arm
 
-# required by virtual/jre-1.8.0-r2::gentoo
-# required by dev-util/jenkins-bin-2.235.5::gentoo
+# required by dev-util/jenkins-bin-2.249.2::gentoo
 # required by @container_set (argument)
-=virtual/jdk-1.8.0-r4 ~arm
+=virtual/jre-1.8.0-r3 ~arm
+# required by dev-java/openjdk-bin-8.265_p01::gentoo
+# required by virtual/jdk-1.8.0-r5::gentoo
+# required by virtual/jre-1.8.0-r3::gentoo
+# required by dev-util/jenkins-bin-2.249.2::gentoo
+# required by @container_set (argument)
+=dev-libs/libffi-compat-3.2.1-r3 ~arm
+# required by virtual/jre-1.8.0-r3::gentoo
+# required by dev-util/jenkins-bin-2.249.2::gentoo
+# required by @container_set (argument)
+=virtual/jdk-1.8.0-r5 ~arm
 # required by dev-java/icedtea-bin-3.16.0::gentoo
 # required by virtual/jdk-1.8.0-r4::gentoo
 # required by virtual/jre-1.8.0-r2::gentoo
@@ -16,9 +25,6 @@ dev-java/openjdk-bin ~arm
 # required by dev-util/jenkins-bin-2.235.5::gentoo
 # required by @container_set (argument)
 =dev-java/icedtea-bin-3.16.0 ~arm
-# required by dev-util/jenkins-bin-2.235.5::gentoo
-# required by @container_set (argument)
-=virtual/jre-1.8.0-r2 ~arm
 # required by dev-java/icedtea-bin-3.16.0::gentoo
 # required by virtual/jdk-1.8.0-r4::gentoo
 # required by virtual/jre-1.8.0-r2::gentoo
