@@ -1,6 +1,7 @@
 app-admin/syslog-ng
 app-editors/nano
 app-emulation/docker
+app-emulation/libpod
 app-misc/screen
 app-portage/eix
 app-portage/gentoolkit
