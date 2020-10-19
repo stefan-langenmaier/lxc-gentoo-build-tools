@@ -1,1 +1,18 @@
 dev-go/go-md2man ~arm
+
+# required by app-emulation/libpod-2.1.0::gentoo
+# required by @container_set (argument)
+=app-emulation/conmon-2.0.20 **
+# required by app-emulation/libpod-2.1.0::gentoo
+# required by @container_set (argument)
+=app-emulation/runc-1.0.0_rc10-r1 ~arm
+# required by app-emulation/libpod-2.1.0::gentoo[rootless]
+# required by @container_set (argument)
+=app-emulation/slirp4netns-1.1.4 **
+# required by app-emulation/slirp4netns-1.1.4::gentoo
+# required by app-emulation/libpod-2.1.0::gentoo[rootless]
+# required by @container_set (argument)
+=net-libs/libslirp-4.3.1 **
+# required by app-emulation/libpod-2.1.0::gentoo
+# required by @container_set (argument)
+=net-misc/cni-plugins-0.8.7 **

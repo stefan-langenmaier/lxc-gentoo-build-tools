@@ -1,4 +1,5 @@
 app-emulation/docker btrfs
+app-emulation/libpod btrfs
 
 # required by app-emulation/docker-19.03.13-r2::gentoo
 # required by @container_set
