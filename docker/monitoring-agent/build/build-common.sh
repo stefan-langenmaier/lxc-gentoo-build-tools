@@ -20,8 +20,9 @@ docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update a
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} useradd collectd'
 
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} usermod -a -G disk collectd'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} touch /var/log/collectd.conf'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} chown collectd:collectd /var/log/collectd.conf'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} mkdir -p /var/log/'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} touch /var/log/collectd.log'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} chown collectd:collectd /var/log/collectd.log'
 set -e
 
 create_image
