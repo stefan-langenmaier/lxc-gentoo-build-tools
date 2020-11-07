@@ -1,4 +1,6 @@
-<=net-libs/libupnp-1.10 ~arm
 dev-libs/libfmt ~arm
 dev-libs/spdlog ~arm
 dev-libs/pugixml ~arm
+
+dev-lang/duktape ~arm
+net-libs/libupnp ~arm
