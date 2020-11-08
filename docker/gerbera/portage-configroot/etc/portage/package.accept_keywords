@@ -1,1 +1,2 @@
-=net-misc/gerbera-1.6.0 ~arm
+net-misc/gerbera ~arm
+dev-lang/duktape ~arm
