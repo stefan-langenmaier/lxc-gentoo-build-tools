@@ -1,6 +1,2 @@
-dev-libs/libfmt ~arm
-dev-libs/spdlog ~arm
 dev-libs/pugixml ~arm
-
 dev-lang/duktape ~arm
-net-libs/libupnp ~arm
