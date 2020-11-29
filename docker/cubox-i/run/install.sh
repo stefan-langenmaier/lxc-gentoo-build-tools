@@ -69,8 +69,10 @@ do
 	rsync -a /home/${f} ${NEW_ROOT}/home/${f} || echo "ERROR: ${f} not copied"
 done
 
+
 mkdir -p ${NEW_ROOT}/mnt/full-root
 mkdir -p ${NEW_ROOT}/mnt/full-data
 
 echo "Remember to update extlinux.conf"
 echo "Remember to activate subvol as default"
+echo "Remember to chown the monitoring home"
