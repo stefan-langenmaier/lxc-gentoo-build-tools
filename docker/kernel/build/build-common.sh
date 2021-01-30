@@ -19,8 +19,8 @@ install_base_system
 #set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'ROOT=${ROOTFS} eselect kernel set 1'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cp /build/portage-configroot/kernel-config ${ROOTFS}/usr/src/linux/.config'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} bash -c "mkdir -p /dev ; touch /dev/null"'
-docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} bash -c "cd /usr/src/linux ; make oldconfig ; make -j5 ; make dtbs"'
+#docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} bash -c "mkdir -p /dev ; touch /dev/null"'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'cd ${ROOTFS}/usr/src/linux ; make oldconfig ; make -j5 ; make dtbs'
 
 # hobo transfer
 docker container create --name transfer-container -v autodeploy-exchange:/autodeploy-exchange slangenmaier/nothing
