@@ -1,9 +1,4 @@
+app-emulation/containerd btrfs
 app-emulation/docker btrfs
-app-emulation/libpod btrfs
-
-# required by app-emulation/docker-19.03.13-r2::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
->=app-emulation/containerd-1.3.7 btrfs
+app-emulation/podman btrfs
 
