@@ -1,2 +1,5 @@
 dev-util/yacc
 sys-kernel/gentoo-sources
+sys-devel/binutils
+sys-kernel/linux-headers
+sys-apps/net-tools
