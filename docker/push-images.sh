@@ -13,3 +13,4 @@ docker push slangenmaier/jenkins:$DATE_D
 docker push slangenmaier/monitoring-agent:$DATE_D
 docker push slangenmaier/monitoring:$DATE_D
 docker push slangenmaier/gerbera:$DATE_D
+docker push slangenmaier/elasticsearch:$DATE_D
