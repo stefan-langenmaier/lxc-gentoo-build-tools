@@ -7,7 +7,7 @@ docker run \
 	-v /mnt/full-data/vols/airrow/app/application.properties:/config/application.properties:rw \
 	-p 6060:8080 \
 	-e DEBUG=true \
-	-e SEARCH_WALK_DISTANCE=1500 \
+	-e SEARCH_WALK_DISTANCE=1500m \
 	-e SEARCH_MIN_ACCURACY=25 \
         --name "airrow" \
         "slangenmaier/airrow-jvm:latest" \
