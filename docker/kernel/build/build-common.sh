@@ -12,7 +12,7 @@ ROOTFS=/mnt/full-data/vols/common-builder/kernel
 
 start_builder_container
 
-docker exec $BNAME bash -c 'emerge -u sys-devel/flex'
+docker exec $BNAME bash -c 'emerge -u sys-devel/flex app-arch/lzop'
 
 install_base_system
 
