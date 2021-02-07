@@ -1,31 +1,31 @@
 www-servers/nginx ~arm
 
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
-# required by @container_set (argument)
-=dev-python/pyrfc3339-1.1 ~arm
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
 # required by @container_set (argument)
 =dev-python/zope-component-4.4.1 ~arm
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
 # required by @container_set (argument)
-=app-crypt/acme-1.9.0 ~arm
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
+=app-crypt/certbot-nginx-1.12.0 ~arm
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
 # required by @container_set (argument)
-=app-crypt/certbot-1.9.0 ~arm
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
+=app-crypt/certbot-1.12.0 ~arm
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
+# required by @container_set (argument)
+=dev-python/josepy-1.6.0 ~arm
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
 # required by @container_set (argument)
 =dev-python/configargparse-1.2.3 ~arm
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
+# required by @container_set (argument)
+=app-crypt/acme-1.12.0 ~arm
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
+# required by @container_set (argument)
+=dev-python/pyrfc3339-1.1 ~arm
+# required by app-crypt/certbot-1.12.0::gentoo
+# required by app-crypt/certbot-nginx-1.12.0::gentoo
 # required by @container_set (argument)
 =dev-python/parsedatetime-2.6 ~arm
-# required by app-crypt/certbot-1.9.0::gentoo
-# required by app-crypt/certbot-nginx-1.9.0::gentoo
-# required by @container_set (argument)
-=dev-python/josepy-1.4.0 ~arm
-# required by @container_set (argument)
-=app-crypt/certbot-nginx-1.9.0 ~arm
