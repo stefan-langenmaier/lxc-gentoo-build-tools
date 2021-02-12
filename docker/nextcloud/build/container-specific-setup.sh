@@ -2,7 +2,7 @@
 set -e
 set -x
 
-NC_VERSION=19.0.6
+NC_VERSION=19.0.8
 mkdir -p $ROOTFS/var/db/webapps
 INSTALL_PATH=$(ROOT=$ROOTFS webapp-config -li nextcloud $NC_VERSION)
 # if the correct version is installed we can skip the installation
