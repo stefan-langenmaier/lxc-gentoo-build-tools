@@ -1,4 +1,4 @@
-=www-apps/nextcloud-19.0.8 ~arm
+=www-apps/nextcloud-20.0.8 ~arm
 www-servers/nginx ~arm
 app-crypt/certbot ~arm
 app-crypt/certbot-nginx ~arm
