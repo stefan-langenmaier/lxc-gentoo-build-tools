@@ -3,6 +3,7 @@ app-editors/nano
 app-portage/eix
 app-portage/gentoolkit
 app-portage/portage-utils
+dev-util/gperf
 dev-util/yacc
 dev-vcs/git
 net-misc/openssh
@@ -12,4 +13,5 @@ sys-apps/portage
 sys-devel/bison
 sys-devel/make
 sys-devel/bc
+sys-devel/binutils
 sys-fs/btrfs-progs
