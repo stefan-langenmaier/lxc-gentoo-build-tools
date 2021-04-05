@@ -26,3 +26,9 @@ dev-go/go-md2man ~arm
 # required by @selected
 # required by @world (argument)
 =net-libs/libslirp-4.4.0 **
+
+# required by app-emulation/docker-20.10.5::gentoo
+# required by @container_set (argument)
+=app-emulation/containerd-1.4.4 ~arm
+# required by @container_set (argument)
+=app-emulation/podman-3.0.1 *

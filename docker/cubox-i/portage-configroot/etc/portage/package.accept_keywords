@@ -21,16 +21,12 @@ net-analyzer/iftop ~arm
 # required by @container_set
 # required by @selected
 # required by @world (argument)
-=app-emulation/containerd-1.4.3-r2 ~arm
-# required by app-emulation/docker-20.10.2::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
 =app-emulation/docker-proxy-0.8.0_p20201215 ~arm
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=app-emulation/podman-2.2.1 **
+# required by app-emulation/docker-20.10.5::gentoo
+# required by @container_set (argument)
+=app-emulation/containerd-1.4.4 ~arm
+# required by @container_set (argument)
+=app-emulation/podman-3.0.1 *
 
 # required by app-emulation/podman-2.2.1::gentoo[rootless]
 # required by @container_set (argument)
