@@ -1,5 +1,5 @@
 
-=app-misc/elasticsearch-6.8.13 **
+=app-misc/elasticsearch-6.8.15 **
 virtual/jdk ~arm
 virtual/jre ~arm
 dev-java/openjdk-bin ~arm

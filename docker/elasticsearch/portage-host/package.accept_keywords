@@ -1,0 +1,10 @@
+# required by dev-java/openjdk-bin-11.0.10_p9::gentoo
+# required by @container_set (argument)
+=app-eselect/eselect-java-0.4.2 ~arm
+# required by dev-java/java-config-2.3.1::gentoo
+# required by dev-java/openjdk-bin-11.0.10_p9::gentoo
+# required by @container_set (argument)
+=sys-apps/baselayout-java-0.1.0-r1 ~arm
+# required by dev-java/openjdk-bin-11.0.10_p9::gentoo
+# required by @container_set (argument)
+=dev-java/java-config-2.3.1 ~arm
