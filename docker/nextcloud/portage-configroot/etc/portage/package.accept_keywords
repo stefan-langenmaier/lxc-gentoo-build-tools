@@ -9,10 +9,10 @@ app-crypt/certbot-nginx ~arm
 dev-php/pecl-imagick ~arm
 dev-php/pecl-redis ~arm
 
-# required by app-crypt/certbot-1.12.0::gentoo
-# required by app-crypt/certbot-nginx-1.12.0::gentoo
+# required by app-crypt/certbot-1.13.0::gentoo
+# required by app-crypt/certbot-nginx-1.13.0::gentoo
 # required by @container_set (argument)
-=dev-python/configargparse-1.2.3 ~arm
+=dev-python/configargparse-1.4 ~arm
 # required by app-crypt/certbot-1.12.0::gentoo
 # required by app-crypt/certbot-nginx-1.12.0::gentoo
 # required by @container_set (argument)
