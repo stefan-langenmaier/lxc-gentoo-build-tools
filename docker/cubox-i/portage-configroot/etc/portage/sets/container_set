@@ -1,6 +1,7 @@
 app-admin/syslog-ng
 app-editors/nano
 app-emulation/docker
+app-emulation/docker-cli
 app-emulation/podman
 app-misc/screen
 app-portage/eix
