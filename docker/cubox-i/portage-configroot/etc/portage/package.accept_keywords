@@ -1,5 +1,5 @@
 app-emulation/docker ~arm
-app-emulation/podman ~arm
+app-emulation/podman **
 net-analyzer/iftop ~arm
 
 # required by app-emulation/docker-20.10.2::gentoo
@@ -25,8 +25,6 @@ net-analyzer/iftop ~arm
 # required by app-emulation/docker-20.10.5::gentoo
 # required by @container_set (argument)
 =app-emulation/containerd-1.4.4 ~arm
-# required by @container_set (argument)
-=app-emulation/podman-3.0.1 *
 
 # required by app-emulation/podman-2.2.1::gentoo[rootless]
 # required by @container_set (argument)
