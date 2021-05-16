@@ -17,6 +17,7 @@ docker exec $BNAME bash -c 'emerge -u dev-util/gperf'
 
 set +e
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} bash -c "mkdir -p  /dev ; touch /dev/null "'
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} eselect java-vm set system 1'
 set -e
 install_base_system
 
