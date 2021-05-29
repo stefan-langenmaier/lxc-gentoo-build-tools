@@ -3,6 +3,7 @@ app-editors/nano
 app-portage/eix
 app-portage/gentoolkit
 app-portage/portage-utils
+dev-libs/glib
 dev-util/gperf
 dev-util/yacc
 dev-vcs/git
