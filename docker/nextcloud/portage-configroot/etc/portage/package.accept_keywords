@@ -31,9 +31,7 @@ dev-php/pecl-redis ~arm
 # required by @container_set
 # required by @selected
 # required by @world (argument)
-=app-crypt/acme-1.16.0 ~arm
-# required by certbot-nginx (argument)
-=app-crypt/certbot-nginx-1.16.0 ~arm
+=app-crypt/acme-1.17.0 ~arm
 # required by app-crypt/certbot-1.16.0::gentoo
 # required by app-crypt/certbot-nginx-1.16.0::gentoo
 # required by @container_set
@@ -46,9 +44,4 @@ dev-php/pecl-redis ~arm
 # required by @selected
 # required by @world (argument)
 =dev-python/pyrfc3339-1.1 ~arm
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=app-crypt/certbot-1.16.0 ~arm
 
