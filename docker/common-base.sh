@@ -84,6 +84,7 @@ docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'mkdir -p ${ROOTFS}/etc/porta
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'mkdir -p ${ROOTFS}/root'
 docker cp $(realpath ../../common-builder/build/etc/portage/make.conf) $BNAME:/build/rootfs/etc/portage/make.conf
 
+docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} bash -c "mkdir -p /dev ; touch /dev/null "'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'echo "en_US.UTF-8 UTF-8" > ${ROOTFS}/etc/locale.gen && chroot ${ROOTFS} locale-gen'
 
 set +e
