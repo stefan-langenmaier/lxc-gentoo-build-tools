@@ -3,45 +3,13 @@ www-servers/nginx ~arm
 app-crypt/certbot ~arm
 app-crypt/certbot-nginx ~arm
 
-# required by @selected
-# required by @world (argument)
-=dev-php/pecl-apcu ~arm
+dev-php/pecl-apcu ~arm
 dev-php/pecl-imagick ~arm
 dev-php/pecl-redis ~arm
-
-# required by app-crypt/certbot-1.16.0::gentoo
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=dev-python/parsedatetime-2.6 ~arm
-# required by app-crypt/certbot-1.16.0::gentoo
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=dev-python/josepy-1.8.0 ~arm
-# required by app-crypt/certbot-1.16.0::gentoo
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=dev-python/zope-component-4.4.1 ~arm
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=app-crypt/acme-1.17.0 ~arm
-# required by app-crypt/certbot-1.16.0::gentoo
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=dev-python/configargparse-1.5 ~arm
-# required by app-crypt/certbot-1.16.0::gentoo
-# required by app-crypt/certbot-nginx-1.16.0::gentoo
-# required by @container_set
-# required by @selected
-# required by @world (argument)
-=dev-python/pyrfc3339-1.1 ~arm
+dev-python/parsedatetime ~arm
+dev-python/josepy ~arm
+dev-python/zope-component ~arm
+app-crypt/acme ~arm
+dev-python/configargparse ~arm
+dev-python/pyrfc3339 ~arm
 
