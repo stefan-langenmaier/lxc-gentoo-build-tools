@@ -20,6 +20,7 @@ set -e
 install_base_system
 
 set +e
+docker exec -e ROOT=/build/rootfs -e PORTAGE_CONFIGROOT=/build/portage-configroot $BNAME bash -c 'emerge -1 dev-python/cffi dev-python/cryptography'
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} rc-update add nginx default'
 # currently no user is created in the ROOTFS
 docker exec -e ROOTFS=/build/rootfs $BNAME bash -c 'chroot ${ROOTFS} groupadd --system --gid 999 nginx'
